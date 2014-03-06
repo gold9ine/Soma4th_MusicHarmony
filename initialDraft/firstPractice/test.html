@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset=utf-8 http-equiv="Content-Language" content="en"/>
+ <title>Minimal Websocket test app</title>
+<style type="text/css">
+	div.title { font-size:18pt; font: Arial; font-weight:normal; text-align:center; color:#000000; }
+	.browser { font-size:18pt; font: Arial; font-weight:normal; text-align:center; color:#ffff00; vertical-align:middle; text-align:center; background:#d0b070; padding:12px; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px;}
+	.group2 { width:1200px; vertical-align:middle; text-align:center; background:#f0f0e0; padding:12px; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; }
+	.explain { vertical-align:middle; text-align:center; background:#f0f0c0; padding:12px; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; color:#404000; }
+	.content { vertical-align:top; text-align:center; background:#fffff0; padding:12px; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; }
+	.canvas { vertical-align:top; text-align:center; background:#efefd0; padding:12px; -webkit-border-radius:10px; -moz-border-radius:10px; border-radius:10px; }
+</style>
+</head>
+
+<body>
+<header></header>
+<hr><br>
+<table width="100%"><tr><td valign=middle align=center><a href="http://libwebsockets.org"><img src="/favicon.png"></a></td><td>
+<section class="browser">Detected Browser: <div id=brow>...</div></section></td></tr></table>
+<section id="pipelining" class="group2" width="100%" valign=middle align=center>
+<div class="title">libwebsockets "pipelining-console-protocol"</div>
+<table width="100%"><tr><td>
+<table class="content" width="20%">
+		<tr><td align=center><input type=button id=offset value="get!" onclick="get_pc_contents();" ></td></tr>
+		<tr><td id=wspc_statustd align=center class="explain"><div id=wspc_status>Not initialized</div></td></tr>
+	</tr>
+</table>
+</td><td class="explain" width="80%">
+Test pipelining console message.
+<br/><pre><textarea id=wspc_contents readonly="readonly" cols="80" rows="24">test</textarea></pre><br/>
+<input id="command" type="text"/>
+<input type = "submit" onclick="get_pc_command();"/>
+</td></tr></table>
+</section>
+<br><hr>
+<article>
+<table><tr><td>
+
+
+
+</td></tr><tr><td>
+Looking for support? <a href="http://libwebsockets.org">http://libwebsockets.org</a><br/>
+Join the mailing list: ​<a href="http://ml.libwebsockets.org/mailman/listinfo/libwebsockets">http://ml.libwebsockets.org/mailman/listinfo/libwebsockets</a>
+
+</td></tr></table>
+
+</article>
+
+<script>
+
+/* BrowserDetect came from http://www.quirksmode.org/js/detect.html */
+
+var BrowserDetect = {
+	init: function () {
+		this.browser = this.searchString(this.dataBrowser) || "An unknown browser";
+		this.version = this.searchVersion(navigator.userAgent)
+			|| this.searchVersion(navigator.appVersion)
+			|| "an unknown version";
+		this.OS = this.searchString(this.dataOS) || "an unknown OS";
+	},
+	searchString: function (data) {
+		for (var i=0;i<data.length;i++)	{
+			var dataString = data[i].string;
+			var dataProp = data[i].prop;
+			this.versionSearchString = data[i].versionSearch || data[i].identity;
+			if (dataString) {
+				if (dataString.indexOf(data[i].subString) != -1)
+					return data[i].identity;
+			}
+			else if (dataProp)
+				return data[i].identity;
+		}
+	},
+	searchVersion: function (dataString) {
+		var index = dataString.indexOf(this.versionSearchString);
+		if (index == -1) return;
+		return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+	},
+	dataBrowser: [
+		{
+			string: navigator.userAgent,
+			subString: "Chrome",
+			identity: "Chrome"
+		},
+		{ 	string: navigator.userAgent,
+			subString: "OmniWeb",
+			versionSearch: "OmniWeb/",
+			identity: "OmniWeb"
+		},
+		{
+			string: navigator.vendor,
+			subString: "Apple",
+			identity: "Safari",
+			versionSearch: "Version"
+		},
+		{
+			prop: window.opera,
+			identity: "Opera",
+			versionSearch: "Version"
+		},
+		{
+			string: navigator.vendor,
+			subString: "iCab",
+			identity: "iCab"
+		},
+		{
+			string: navigator.vendor,
+			subString: "KDE",
+			identity: "Konqueror"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "Firefox",
+			identity: "Firefox"
+		},
+		{
+			string: navigator.vendor,
+			subString: "Camino",
+			identity: "Camino"
+		},
+		{		// for newer Netscapes (6+)
+			string: navigator.userAgent,
+			subString: "Netscape",
+			identity: "Netscape"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "MSIE",
+			identity: "Explorer",
+			versionSearch: "MSIE"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "Gecko",
+			identity: "Mozilla",
+			versionSearch: "rv"
+		},
+		{ 		// for older Netscapes (4-)
+			string: navigator.userAgent,
+			subString: "Mozilla",
+			identity: "Netscape",
+			versionSearch: "Mozilla"
+		}
+	],
+	dataOS : [
+		{
+			string: navigator.platform,
+			subString: "Win",
+			identity: "Windows"
+		},
+		{
+			string: navigator.platform,
+			subString: "Mac",
+			identity: "Mac"
+		},
+		{
+			   string: navigator.userAgent,
+			   subString: "iPhone",
+			   identity: "iPhone/iPod"
+	    },
+		{
+			string: navigator.platform,
+			subString: "Linux",
+			identity: "Linux"
+		}
+	]
+
+};
+BrowserDetect.init();
+
+document.getElementById("brow").textContent = " " + BrowserDetect.browser + " "
+	+ BrowserDetect.version +" " + BrowserDetect.OS +" ";
+
+	var pos = 0;
+
+function get_appropriate_ws_url()
+{
+	var pcol;
+	var u = document.URL;
+
+	/*
+	 * We open the websocket encrypted if this page came on an
+	 * https:// url itself, otherwise unencrypted
+	 */
+
+	if (u.substring(0, 5) == "https") {
+		pcol = "wss://";
+		u = u.substr(8);
+	} else {
+		pcol = "ws://";
+		if (u.substring(0, 4) == "http")
+			u = u.substr(7);
+	}
+
+	u = u.split('/');
+
+	return pcol + u[0];
+}
+
+
+
+/* pipelining console protocol */
+	
+	var socket_pc;
+
+	if (typeof MozWebSocket != "undefined") {
+		socket_pc = new MozWebSocket(get_appropriate_ws_url(),
+				   "pipelining-console-protocol");
+	} else {
+		socket_pc = new WebSocket(get_appropriate_ws_url(),
+				   "pipelining-console-protocol");
+	}
+
+
+	try {
+		socket_pc.onopen = function() {
+			document.getElementById("wspc_statustd").style.backgroundColor = "#40ff40";
+			document.getElementById("wspc_status").textContent = " websocket_pc connection opened ";
+		} 
+
+		socket_pc.onmessage =function got_packet(msg) {
+			document.getElementById("wspc_contents").textContent = msg.data + "\n";
+		} 
+
+		socket_pc.onclose = function(){
+			document.getElementById("wspc_statustd").style.backgroundColor = "#ff4040";
+			document.getElementById("wspc_status").textContent = " websocket_pc connection CLOSED ";
+		}
+	} catch(exception) {
+		alert('<p>Error' + exception);  
+	}
+
+function get_pc_contents() {
+	socket_pc.send("get\n");
+	document.getElementById("wspc_contents").textContent = "GET!! ";
+}
+function get_pc_command() {
+	var exec_command = document.getElementById("command");					
+	socket_pc.send(exec_command.value);
+	exec_command.value = "";
+}
+
+</script>
+
+</body>
+</html>
