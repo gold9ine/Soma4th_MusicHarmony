@@ -4,3 +4,4 @@
 *.o
 *.bak
 *.pro.user
+.qmake.stash
