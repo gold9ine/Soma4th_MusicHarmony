@@ -1,8 +1,12 @@
 *.*~
-#*.*#
+*.*#
 *.out
 *.o
 *.bak
 *.pro.user
 .qmake.stash
 *.DS_Store
+moc_*.*
+Makefile
+EventHandler
+*.a

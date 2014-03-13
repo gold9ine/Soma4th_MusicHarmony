@@ -1,8 +1,0 @@
-\*.*~
-#*.*#
-*.out
-*.o
-*.bak
-*.pro.user
-.qmake.stash
-*.DS_Store

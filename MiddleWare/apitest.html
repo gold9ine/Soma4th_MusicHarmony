@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Websocket client test</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <p>
+    <button onClick="network.connect()">Connect</button>
+    <button onClick="network.disconnect()">Disconnect</button>
+    <p>websocket state: <span id="socketState">null</span></p>
+</p>
+<p>
+    <textarea id="chatTextArea" style="width:400px;height:200px;"></textarea>
+</p>
+<p>
+    <input type="text" id="inputPseudo" placeholder="pseudo">
+    <input type="text" id="inputMessage" placeholder="message" onkeydown="if(event.keyCode==13)sendMessage();">
+    <button onClick="sendMessage();">Send</button>
+</p>
+<script type="text/javascript" src="testAPI.js"></script>
+<script type="text/javascript">
+    document.querySelector("#inputPseudo").setAttribute("placeholder", "user" + Math.floor(Math.random() * 8999 + 1000));
+
+    var chatTextArea = document.getElementById("chatTextArea");
+    var network = new Network();
+    updateSocketState();
+</script>
+</body>
+</html>
