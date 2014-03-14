@@ -1,0 +1,148 @@
+html,body{
+   height: 100%
+}
+body{
+   margin : 0;
+   padding: 0;
+}
+
+#scrollArea{
+   float: left;
+width: 100%;
+height: 100%;
+}
+
+#musicPlayArea{
+height: 50px; 
+background: blue; 
+width: 100%; 
+vertical-align: bottom; 
+bottom: 0; 
+position: fixed; 
+text-align: center;
+}
+
+#topBanner{
+float: left;
+text-align: right;
+vertical-align: middle;
+display: table-cell;
+height: 180px;
+/*background-color: #333;*/
+width: 100%;
+background:  url('/img/topBannerImg.jpg') no-repeat center;
+background-size: 100% 100%;
+}
+
+#loginButton{
+   border-top: 1px solid #8927d9;
+   background: #8927d9;
+   background: -webkit-gradient(linear, left top, left bottom, from(#8927d9), to(#8927d9));
+   background: -webkit-linear-gradient(top, #8927d9, #8927d9);
+   background: -moz-linear-gradient(top, #8927d9, #8927d9);
+   background: -ms-linear-gradient(top, #8927d9, #8927d9);
+   background: -o-linear-gradient(top, #8927d9, #8927d9);
+   padding: 4px 8px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 10px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+#loginButton:hover {
+   border-top-color: #d44fe8;
+   background: #d44fe8;
+   color: #ccc;
+}
+#loginButton:active {
+   border-top-color: #8927d9;
+   background: #8927d9;
+}
+
+#joinButton {
+   border-top: 1px solid #3327d9;
+   background: #3327d9;
+   background: -webkit-gradient(linear, left top, left bottom, from(#3327d9), to(#3327d9));
+   background: -webkit-linear-gradient(top, #3327d9, #3327d9);
+   background: -moz-linear-gradient(top, #3327d9, #3327d9);
+   background: -ms-linear-gradient(top, #3327d9, #3327d9);
+   background: -o-linear-gradient(top, #3327d9, #3327d9);
+   padding: 4px 8px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 10px;
+   font-family: Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+#joinButton:hover {
+   border-top-color: #646ae3;
+   background: #646ae3;
+   color: #ccc;
+}
+#joinButton:active {
+   border-top-color: #3327d9;
+   background: #3327d9;
+}
+
+#center{
+   width: 100%;
+   height: 780px;
+   float: left;
+}
+#contents{
+   height: 100%;
+}
+#contentsFrame{
+   width: 100%;
+height: 100%;
+}
+
+#topMenu{
+text-align: center;
+padding: 30px;
+}
+
+#bottom{
+   width: 100%;
+   height: 100px;
+   float: left;
+   background-color: red;
+}
+
+.topBottom{
+text-align: center;
+}
+
+.leftArea{
+   width: 20%;
+   height: 100%;
+   float: left;
+}
+
+.middleArea{
+   width: 60%;
+   height: 100%;
+   float: left;
+}
+
+.rightArea{
+   width: 20%;
+   height: 100%;
+   float: right;
+}
+
+
