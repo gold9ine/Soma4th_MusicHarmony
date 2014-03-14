@@ -1,9 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Music Harmoney</title>
 
-  </head>
-    <body>
-        aaaaaaaaaa
-    </body>
+  <!-- Setting 시작 -->
+  <link rel="stylesheet" href="/css/layout.css">
+  <script src=""></script>
+
+  <meta name="description" content="온라인 뮤직 콜라보레이션 플랫폼" />
+  <meta name="keywords" content="뮤직, 밴드, 음악, 콜라보레이션"  />
+  <!-- 공통파일 포함 -->
+  <meta id="mobileMeta" name="viewport" content="width=device-width" />
+  <!--모바일용 화면크기 비율고정-->
+  <link rel="shortcut icon" href="/img/icon_mh.png" />
+  <link rel="apple-touch-icon" href="/img/icon_mh.png" />
+</head>
+<body>
+  <div id="scrollArea">
+    <div id="topBanner" class="topBottom">
+      <!-- topBanner -->
+      <div class="leftArea">
+      </div>
+      <div class="middleArea">
+        <div style="margin-top: 60px;">
+        <div>
+          <button id="loginButton">LogIn ▼</button>
+          <button id="joinButton">Join ▼</button>
+        </div>
+        <form>
+          <input type="search" results="5" name="s" placeholder="Search" autosave="unique">
+          <button> Go </button>
+        </form>
+      </div>
+    </div>
+    <div class="rightArea">
+    </div>
+  </div>
+
+  <div id="center">
+    <div class="leftArea">
+    </div>
+    <div class="middleArea">
+      <div id="topMenu">
+        <la><a href="/newUploaded" target="centerFrame">New Uploaded</a></li>
+        <la><a href="/harmonyChart" target="centerFrame">Harmony Chart</a></li>
+        <la><a href="/artistRanking" target="centerFrame">Artist Ranking</a></li>
+        <la><a href="/index2" target="centerFrame">Music Harmoney</a></li>
+        <la><a href="/recommend" target="centerFrame">Recommened</a></li>
+        <la><a href="/userInfo" target="centerFrame">My Favorite List</a></li>
+        <la><a href="/searchResult" target="centerFrame">User Info</a></li>
+      </div>
+      <div id="contents">
+        <iframe id="contentsFrame" src='/index1' name='centerFrame'></iframe>
+      </div>
+    </div>
+    <div class="rightArea">
+    </div>
+  </div>
+  <div id="bottom" class="topBottom">
+    bottom
+  </div>
+</div>
+
+<div id="musicPlayArea">
+  music play area
+</div>
+</body>
 </html>
