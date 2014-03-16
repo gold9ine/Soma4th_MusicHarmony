@@ -8,5 +8,4 @@
 *.DS_Store
 moc_*.*
 Makefile
-EventHandler
 *.a

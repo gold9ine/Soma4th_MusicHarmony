@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include <QtCore>
 #include <iostream>
 #include <tr1/cstdint>
+#include "JsonParser.h"
 
 SocketThread::SocketThread(QtWebsocket::QWsSocket* wsSocket) :
 	socket(wsSocket)
@@ -62,8 +63,12 @@ void SocketThread::finished()
 void SocketThread::processMessage(QString message)
 {
 	// ANY PROCESS HERE IS DONE IN THE SOCKET THREAD !
+    JsonParser jsonparser;
+    QString json = jsonparser.read(message);
+
     std::cout << tr("thread 0x%1 | %2")
                  .arg(QString::number((intptr_t)QThread::currentThreadId(), 16)).arg(message).toStdString() << std::endl;
+    sendMessage(json);
 }
 
 void SocketThread::sendMessage(QString message)

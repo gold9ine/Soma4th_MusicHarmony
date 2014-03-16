@@ -14,7 +14,8 @@ SOURCES += main.cpp \
     MainLogic.cpp \
     SocketThread.cpp \
     ServerThreaded.cpp \
-    UdpServer.cpp
+    UdpServer.cpp \
+    JsonParser.cpp
 
 HEADERS += \
     MainLogic.h \
@@ -22,6 +23,7 @@ HEADERS += \
     ServerThreaded.h \
     ../QtWebsocket/QWsSocket.h \
     ../QtWebsocket/QWsServer.h \
-    UdpServer.h
+    UdpServer.h \
+    JsonParser.h
 
 LIBS += -L ../QtWebsocket/ -lQtWebsocket
