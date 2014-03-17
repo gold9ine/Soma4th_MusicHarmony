@@ -1,2 +1,2 @@
-require "sinatra/activerecord/rake"
 require "./runner"
+require "sinatra/activerecord/rake"
