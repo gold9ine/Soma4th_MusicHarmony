@@ -1,6 +1,23 @@
-require 'sinatra'
-require "sinatra/activerecord"
+require 'rubygems'
 require 'active_record'
+# require 'bundler/setup'
+# require './models/post'
+# require './models/Reply'
+require 'sinatra'               #shotgun
+require 'sinatra/activerecord'
+
+#require "sinatra/base"         #unicorn
+
+# ActiveRecord::Base.establish_connection(
+#   :adapter  => "mysql2",
+#   :host     => "172.16.100.76",
+#   :port     => 3306,
+#   :username => "mh",
+#   :password => "thak2014",
+#   :database => "test"
+# )
+
+#class MyApp < Sinatra::Base    #unicorn
 
 get '/' do
   
@@ -117,3 +134,6 @@ get '/Audiee' do
 
   erb :Audiee
 end
+
+
+#end                             #unicorn
