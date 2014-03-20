@@ -1,0 +1,11 @@
+.normal #topBanner{
+float: left;
+text-align: right;
+vertical-align: middle;
+display: table-cell;
+height: 180px;
+/*background-color: #333;*/
+width: 100%;
+background:  url('/img/topBannerImg_normalMode.jpg') no-repeat center;
+background-size: 100% 100%;
+}

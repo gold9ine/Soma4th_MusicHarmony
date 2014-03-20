@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Music Harmoney</title>
-
+   <title>Music Harmoney</title>
   <!-- Setting 시작 -->
-  <link rel="stylesheet" href="/css/layout.css">
-  <script src=""></script>
-
+  <!-- 공통파일 포함 -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="description" content="온라인 뮤직 콜라보레이션 플랫폼" />
   <meta name="keywords" content="뮤직, 밴드, 음악, 콜라보레이션"  />
-  <!-- 공통파일 포함 -->
-  <meta id="mobileMeta" name="viewport" content="width=device-width" />
   <!--모바일용 화면크기 비율고정-->
+  <meta id="mobileMeta" name="viewport" content="width=device-width" />
+
   <link rel="shortcut icon" href="/img/icon_mh.png" />
   <link rel="apple-touch-icon" href="/img/icon_mh.png" />
+    <!-- java script -->
+  <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <script src="/js/application.js"></script>
+
+    <!-- style sheet -->
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/normal.css">
+  <link rel="stylesheet" href="/css/editor.css">
+
 </head>
 <body>
-  <div id="scrollArea">
+  <div id="scrollArea" class="normal">
     <div id="topBanner" class="topBottom">
       <!-- topBanner -->
       <div class="leftArea">
@@ -46,13 +52,23 @@
         <la><a href="/newUploaded" target="centerFrame">New Uploaded</a></li>
         <la><a href="/harmonyChart" target="centerFrame">Harmony Chart</a></li>
         <la><a href="/artistRanking" target="centerFrame">Artist Ranking</a></li>
-        <!-- <la><a href="/index2" target="centerFrame">Music Harmoney</a></li> -->
-        <la><a href="/Audiee" target="centerFrame">Music Harmoney</a></li>
+        <!-- <la><a href="/Audiee" target="centerFrame">Music Harmoney</a></li> -->
+        <button id="modeChangeButton">Music Harmoney</button>
         <la><a href="/recommend" target="centerFrame">Recommened</a></li>
-        <la><a href="/userInfo" target="centerFrame">My Favorite List</a></li>
-        <la><a href="/searchResult" target="centerFrame">User Info</a></li>
+        <la><a href="/myFavoriteList" target="centerFrame">My Favorite List</a></li>
+        <la><a href="/userInfo" target="centerFrame">User Info</a></li>
+ <!--          <button id="newUploadButton"> Recent </button>
+          <button id="harmonyChartButton"> Chart </button>
+          <button id="artistRankingButton"> Ranking </button>
+          <button id="modeChangeButton"> Music Harmony </button>
+          <button id="recommendButton"> Recommend </button>
+          <button id="favoriteButton"> Favorite </button>
+          <button id="userInfoButton"> User </button> -->
       </div>
       <div id="contents">
+       <!-- <script>
+        $("#contents").load("/index1")
+        </script> -->
         <iframe id="contentsFrame" src='/index1' name='centerFrame'></iframe>
       </div>
     </div>
