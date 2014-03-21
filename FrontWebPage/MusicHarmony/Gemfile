@@ -19,3 +19,4 @@ gem 'shotgun'
 gem "sqlite3"
 # gem 'activerecord-mysql2-adapter'
 gem "unicorn"
+gem 'carrierwave'

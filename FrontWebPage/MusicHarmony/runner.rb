@@ -2,9 +2,13 @@ require 'rubygems'
 require 'active_record'
 require 'bundler/setup'
 
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+
 require './models/tables'
 require 'sinatra'               #shotgun
 require 'sinatra/activerecord'
+
 require "sinatra/base"         #unicorn
 
 ActiveRecord::Base.establish_connection(
@@ -13,7 +17,7 @@ ActiveRecord::Base.establish_connection(
   :port     => 3306,
   :username => "mh",
   :password => "thak2014",
-  :database => "test"
+  :database => "mh"
 )
 
 #class MyApp < Sinatra::Base    #unicorn
