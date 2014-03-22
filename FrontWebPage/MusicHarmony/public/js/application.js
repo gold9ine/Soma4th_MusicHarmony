@@ -67,4 +67,7 @@ $(function(){
     $("button#createProjectButton").on('click', function(){
         $("#contents").load("/index2")
     });
+    $("button#editProjectButton").on('click', function(){
+    $("#contents").load("/Audiee")
+    });
 });
