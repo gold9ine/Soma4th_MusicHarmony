@@ -63,4 +63,8 @@ $(function(){
     $("button#userInfoButton").on('click', function(){
         $("#contents").load("/userInfo")
     });
+
+    $("button#createProjectButton").on('click', function(){
+        $("#contents").load("/index2")
+    });
 });

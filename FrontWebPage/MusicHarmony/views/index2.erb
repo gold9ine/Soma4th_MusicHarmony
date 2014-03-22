@@ -4,7 +4,48 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>Music Harmoney Editor</title>
 </head>
-index2 editor page
+
 <body>
-  </body>
-  </html>
+  <form id="project-create" action="/new_project" method="post" enctype="multipart/form-data"
+  >
+  <div>
+    <label for="post-title">New Project!!</label>
+    <br>
+    Title : <input name="project[TITLE]"><%= @new_project.TITLE  %></input>
+    <br>
+    Info : <textarea name="project[PROJECT_INFO]"><%= @new_project.PROJECT_INFO  %></textarea>
+    <br>
+
+    Image : <input type="file" name="project[ALBUM_IMAGE_PATH]" size="30" />
+
+  </div>
+  <input type="submit"/>
+</form>
+
+<div id="project-list">
+  <% @project.each do |project| %>
+  <div class="projects">
+    <a href="/project/<%= project.id %>">
+      <h1><%= project.TITLE %></h1></a>
+
+        <!-- <img width="150" src="<
+        #%= project.ALBUM_IMAGE_PATH_url 
+        %>"/> -->
+        
+        <img src="<%= project.ALBUM_IMAGE_PATH_url %>"/>
+        <h5>Info : <%= project.PROJECT_INFO %></h5>
+      <div>
+      <a href="/project/<%= project.id %>/destroy">
+        delete project
+      </a>
+<!--       <a href="/project/<%= project.id %>/edit">
+        edit project
+      </a> -->
+    </div>
+
+    </div><br>
+    <% end %>
+  </div>
+
+</body>
+</html>
