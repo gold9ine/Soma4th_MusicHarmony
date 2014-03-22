@@ -9,7 +9,7 @@ require './models/tables'
 require 'sinatra'               #shotgun
 require 'sinatra/activerecord'
 
-require "sinatra/base"         #unicorn
+# require "sinatra/base"         #unicorn
 
 ActiveRecord::Base.establish_connection(
   :adapter  => "mysql2",
@@ -135,7 +135,7 @@ end
 
 get '/Audiee' do
 
-  erb :Audiee
+  erb :audiee2
 end
 
 
