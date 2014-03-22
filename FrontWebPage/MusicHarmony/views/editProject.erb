@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <form id="project-edit" action="/project/<%= @project.id %>" method="post">
+      <div> 
+        <label for="project-Title"><%= @project.TITLE %></label>
+        <br>
+        <input name="project[TITLE]"></input>
+      </div>
+      <input value="수정" type="submit"/>
+    </form>
+  </body>
+</html>

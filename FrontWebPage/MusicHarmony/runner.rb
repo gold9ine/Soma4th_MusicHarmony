@@ -23,15 +23,26 @@ ActiveRecord::Base.establish_connection(
 #class MyApp < Sinatra::Base    #unicorn
 
 get '/' do
-  
+
   erb :index
 end
 
 # ////////////////////////////
 
 get '/index1' do
+  @new_project = Project.new
+  @project = Project.all
+  @source = Source.all
 
   erb :index1
+end
+
+get '/index2' do
+  @new_project = Project.new
+  @project = Project.all
+  @source = Source.all
+
+  erb :index2
 end
 
 get '/newUploaded' do
@@ -137,6 +148,48 @@ get '/Audiee' do
 
   erb :Audiee
 end
+# ////////////////////////////
 
+post '/new_project' do
+  @project = Project.new(params[:project])
+  # @projects = Project.new
+  # @projects.TITLE = params[:project][:TITLE]
+  # @projects.ALBUM_IMAGE_PATH = params[:project][:ALBUM_IMAGE_PATH]
+  @project.save!
+
+  # redirect '/'
+  redirect 'index2'
+end
+
+get '/project/:id/edit' do
+  @project = Project.find(params[:id])
+
+  erb :editProject
+end
+
+get "/project/:id/destroy" do
+  @project = Project.find(params[:id])
+  @project.destroy
+
+  # redirect "/"
+  redirect 'index2'
+end
+
+post '/project/:id' do
+  @project = Project.find(params[:id])
+  @project.TITLE = params[:project][:TITLE]
+  @project.ALBUM_IMAGE_PATH = params[:project][:ALBUM_IMAGE_PATH]
+  @project.save!
+
+  redirect '/'
+end
+
+get '/project/:id' do
+  @project = Project.find(params[:id])
+  @new_resource = Source.new
+  @resource = Source.all
+
+  erb :projectInfo
+end
 
 #end                             #unicorn
