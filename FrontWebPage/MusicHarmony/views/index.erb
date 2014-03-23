@@ -54,35 +54,35 @@
     <div class="middleArea">
       <div id="topMenu">
 
-        <la><a href="/index2" target="centerFrame">MyProject</a></la>
-        <la><a href="/Audiee" target="centerFrame">Edit</a></la>
-
-        <la><a href="/newUploaded" target="centerFrame">Recent</a></la>
-        <la><a href="/harmonyChart" target="centerFrame">Chart</a></la>
-        <la><a href="/artistRanking" target="centerFrame">Ranking</a></la>
-        <button id="modeChangeButton">Music Harmoney</button>
-        <la><a href="/recommend" target="centerFrame">Recommened</a></la>
-        <la><a href="/myFavoriteList" target="centerFrame">Favorite List</a></la>
-        <la><a href="/userInfo" target="centerFrame">User</a></la>
-        
-
+        <div class="btn-group">
+<!--           <a class="btn btn-default" href="/index2" target="centerFrame">MyProject</a>
+          <a class="btn btn-default" href="/Audiee" target="centerFrame">Edit</a>
+          <a class="btn btn-default" href="/newUploaded" target="centerFrame">Recent</a>
+          <a class="btn btn-default" href="/harmonyChart" target="centerFrame">Chart</a>
+          <a class="btn btn-default" href="/artistRanking" target="centerFrame">Ranking</a>
+          <a class="btn btn-default" id="modeChangeButton">Music Harmoney</a>
+          <a class="btn btn-default" href="/recommend" target="centerFrame">Recommened</a>
+          <a class="btn btn-default" href="/myFavoriteList" target="centerFrame">Favorite List</a>
+          <a class="btn btn-default" href="/userInfo" target="centerFrame">User</a> -->
           
-          <!-- <button id="createProjectButton"> MyProject </button>
-          <button id="editProjectButton"> Edit </button>
-          <la><a href="/Audiee" target="centerFrame">Edit</a></la>
-          <button id="newUploadButton"> Recent </button>
-          <button id="harmonyChartButton"> Chart </button>
-          <button id="artistRankingButton"> Ranking </button>
-          <button id="modeChangeButton"> Music Harmony </button>
-          <button id="recommendButton"> Recommend </button>
-          <button id="favoriteButton"> Favorite </button>
-          <button id="userInfoButton"> User </button> -->
-
+          <button class="btn btn-default" id="createProjectButton"> MyProject </button>
+          <button class="btn btn-default" id="editProjectButton"> Edit </button>
+          <button class="btn btn-default" href="/Audiee" target="centerFrame">Edit</button>
+          <!-- <button class="btn btn-default" id="newUploadButton"> Recent </button> -->
+          <button class="btn btn-default" id="harmonyChartButton"> Chart </button>
+          <button class="btn btn-default" id="artistRankingButton"> Ranking </button>
+          <button class="btn btn-default" id="modeChangeButton"> Music Harmony </button>
+          <button class="btn btn-default" id="recommendButton"> Recommend </button>
+          <button class="btn btn-default" id="favoriteButton"> Favorite </button>
+          <button class="btn btn-default" id="userInfoButton"> User </button>
+        </div>
       </div>
       <div id="contents">
-        <!--<script>$("#contents").load("/index1")</script> -->
-         <iframe id="contentsFrame" src='/index2' name='centerFrame'></iframe> 
+        <script>$("#contents").load("/index1")</script>
+         <!-- <iframe id="contentsFrame" src='/index2' name='centerFrame'></iframe>  -->
          <!-- <iframe id="contentsFrame" name='centerFrame'></iframe> -->
+         <%= erb '/index1'.to_sym %>
+         <%= erb :index1%>
       </div>
     </div>
     <div class="rightArea">

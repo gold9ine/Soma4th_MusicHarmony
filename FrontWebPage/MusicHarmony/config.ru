@@ -6,4 +6,4 @@ require 'sinatra'
 #require File.expand_path '../runner.rb', __FILE__
 require './runner'
 
-run MyApp
+run Sinatra::Application

@@ -100,12 +100,12 @@ background-size: 100% 100%;
 
 #center{
    width: 100%;
-   height: 100%;
+   height: 500px;
    float: left;
 }
 #contents{
    height: 100%;
-   /*background-color: yellow;*/
+   background-color: yellow;
    /*opacity: 0.5;*/
 }
 #contentsFrame{

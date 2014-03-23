@@ -9,7 +9,7 @@ require './models/tables'
 require 'sinatra'               #shotgun
 require 'sinatra/activerecord'
 
-# require "sinatra/base"         #unicorn
+require "sinatra/base"         #unicorn
 
 ActiveRecord::Base.establish_connection(
   :adapter  => "mysql2",
@@ -19,8 +19,6 @@ ActiveRecord::Base.establish_connection(
   :password => "thak2014",
   :database => "mh"
 )
-
-#class MyApp < Sinatra::Base    #unicorn
 
 get '/' do
 
@@ -146,7 +144,7 @@ end
 
 get '/Audiee' do
 
-  erb :Audiee
+  erb :audiee3
 end
 # ////////////////////////////
 
@@ -159,6 +157,7 @@ post '/new_project' do
 
   # redirect '/'
   redirect 'index2'
+  # erb :index2
 end
 
 get '/project/:id/edit' do
@@ -192,4 +191,3 @@ get '/project/:id' do
   erb :projectInfo
 end
 
-#end                             #unicorn

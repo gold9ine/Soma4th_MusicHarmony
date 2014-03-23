@@ -32,42 +32,42 @@ $(function(){
     // });
 
     $("button#newUploadButton").on('click', function(){
-        $("#contents").load("/newUploaded")
+        $("#contents").load("/newUploaded");
     });
     $("button#harmonyChartButton").on('click', function(){
-        $("#contents").load("/harmonyChart")
+        $("#contents").load("/harmonyChart");
     });
     $("button#artistRankingButton").on('click', function(){
-        $("#contents").load("/artistRanking")
+        $("#contents").load("/artistRanking");
     });
     $("button#modeChangeButton").on('click', function(){
-    var scrollArea = $('#scrollArea');
+        var scrollArea = $('#scrollArea');
 
-    if(scrollArea.hasClass('normal'))
-    {
-      scrollArea.removeClass('normal');
-      scrollArea.addClass('editor');
-    }
-    else
-    {
-      scrollArea.removeClass('editor');
-      scrollArea.addClass('normal');
-    }
+        if(scrollArea.hasClass('normal'))
+        {
+          scrollArea.removeClass('normal');
+          scrollArea.addClass('editor');
+        }
+        else
+        {
+          scrollArea.removeClass('editor');
+          scrollArea.addClass('normal');
+        }
     });
     $("button#recommendButton").on('click', function(){
-        $("#contents").load("/recommend")
+        $("#contents").load("/recommend");
     });
     $("button#favoriteButton").on('click', function(){
-        $("#contents").load("/myFavoriteList")
+        $("#contents").load("/myFavoriteList");
     });
     $("button#userInfoButton").on('click', function(){
-        $("#contents").load("/userInfo")
+        $("#contents").load("/userInfo");
     });
 
     $("button#createProjectButton").on('click', function(){
-        $("#contents").load("/index2")
+        $("#contents").load("/index2");
     });
     $("button#editProjectButton").on('click', function(){
-    $("#contents").load("/Audiee")
+        $("#contents").load("/Audiee");
     });
 });
