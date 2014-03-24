@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Project Info</title>
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> 
-<style type="text/css">
-    .bs-example{
-      margin: 20px;
-    }
-    .form-group {
-      margin-bottom: 0px;
-}
-</style>
+ <title>Music Harmoney</title>
+ <!-- Setting 시작 -->
+ <%= erb :fileInclude %>
 </head>
 <body>
+  <div id="scrollArea" class="normal">
+    <div id="topBanner" class="topBottom">
+      <!-- topBanner -->
+      <div class="leftArea">
+      </div>
+      <div class="middleArea">
+        <%= erb :loginForm %>
+      </div>
+      <div class="rightArea">
+      </div>
+    </div>
+
+    <div id="center">
+      <div class="leftArea">
+      </div>
+      <div class="middleArea">
+        <%= erb :topMenu %>
+        <div id="contents">
 <div class="bs-example" style="width: 40%;float: left;">
 <legend>Project Information</legend>
  <h1><%= @project.TITLE %></h1>
@@ -27,7 +34,7 @@
   </div>
   <div>
     <div class="form-group">
-      <label>Artist : </label><%= @project.USER_ID  %>
+      <label>Artist : </label><%= @project.ARTIST  %>
     </div>
     <div class="form-group">
       <label>RunTime : </label><%= @project.PLAY_TIME  %>
@@ -70,5 +77,15 @@
 <div id="project-replies">
   </div>
 </div>
-  </body>
-  </html>
+        </div>
+      </div>
+      <div class="rightArea">
+      </div>
+    </div>
+    <%= erb :bottomInfo %>
+  </div>
+  <%= erb :playArea %>
+</body>
+</html>
+
+

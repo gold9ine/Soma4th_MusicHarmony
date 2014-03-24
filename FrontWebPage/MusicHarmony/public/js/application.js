@@ -1,36 +1,4 @@
-// $(function(){
-//   $('button#change').on('click', function(){
-//     console.log("!");
-
-//     var wrapper = $('#wrapper');
-
-//     if(wrapper.hasClass('normal'))
-//     {
-//       wrapper.removeClass('normal');
-//       wrapper.addClass('editor');
-//     }
-//     else
-//     {
-//       wrapper.removeClass('editor');
-//       wrapper.addClass('normal');
-//     }
-//   });
-// });
-
 $(function(){                              
-    // $("button#change").on('click', function(){ 
-    //     var oneDiv = $("#one").text().replace("First", "This is the first");
-    //     $("#one").text(oneDiv);
-         
-    //     var oldText = "Save Earth and smile!";
-    //     var newText = oldText.replace("smile", "be happy");
-    //     $("#two").text(newText);
-    // });
-     
-    // $("#refresh").click(function(){
-    //     location.reload();
-    // });
-
     $("button#newUploadButton").on('click', function(){
         $("#contents").load("/newUploaded");
     });
@@ -54,20 +22,21 @@ $(function(){
           scrollArea.addClass('normal');
         }
     });
-    $("button#recommendButton").on('click', function(){
-        $("#contents").load("/recommend");
+    $("button#myProjectListButton").on('click', function(){
+        $("#contents").load("/myProjectList");
     });
-    $("button#favoriteButton").on('click', function(){
-        $("#contents").load("/myFavoriteList");
+    $("button#editProjectButton").on('click', function(){
+        $("#contents").load("/edit-page");
     });
     $("button#userInfoButton").on('click', function(){
         $("#contents").load("/userInfo");
     });
 
-    $("button#createProjectButton").on('click', function(){
-        $("#contents").load("/index2");
+    $("button#project-delete-btn").on('click', function(){
+        console.log("ddd");
+        $("#contents").load("/myProjectList");
     });
-    $("button#editProjectButton").on('click', function(){
-        $("#contents").load("/Audiee");
-    });
+
+
+    
 });

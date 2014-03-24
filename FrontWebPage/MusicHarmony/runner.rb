@@ -27,26 +27,20 @@ end
 
 # ////////////////////////////
 
-get '/index1' do
-  @new_project = Project.new
-  @project = Project.all
-  @source = Source.all
-
-  erb :index1
-end
-
-get '/index2' do
-  @new_project = Project.new
-  @project = Project.all
-  @source = Source.all
-
-  erb :index2
-end
 
 get '/newUploaded' do
 
-  erb :newUploaded
+  # erb :newUploaded
+  erb :mainRecentSlide
 end
+
+# get '/index1' do
+#   @new_project = Project.new
+#   @project = Project.all
+#   @source = Source.all
+
+#   erb :index1
+# end
 
 get '/harmonyChart' do
 
@@ -57,6 +51,22 @@ get '/artistRanking' do
 
   erb :artistRanking
 end
+
+get '/myProjectList' do
+  @new_project = Project.new
+  @project = Project.all
+  @source = Source.all
+
+  erb :my_project_list
+end
+
+get '/edit-page' do
+
+  erb :audiee3
+end
+
+# ////////////////////////////
+
 
 get '/recommend' do
 
@@ -85,49 +95,9 @@ end
 
 # ////////////////////////////
 
-get '/index2' do
-
-  erb :index2
-end
-
-get '/newUploaded2' do
-
-  erb :newUploaded2
-end
-
-get '/harmonyChart2' do
-
-  erb :harmonyChart2
-end
-
-get '/artistRanking2' do
-
-  erb :artistRanking2
-end
-
 get '/createProject' do
 
   erb :createProject
-end
-
-get '/myProjectList' do
-
-  erb :myProjectList
-end
-
-get '/userInfo2' do
-
-  erb :userInfo2
-end
-
-get '/searchResult2' do
-
-  erb :searchResult2
-end
-
-get '/projectInfo2' do
-
-  erb :projectInfo2
 end
 
 get '/projectEdit' do
@@ -142,10 +112,7 @@ get '/musicPlayer' do
   erb :musicPlayer
 end
 
-get '/Audiee' do
 
-  erb :audiee3
-end
 # ////////////////////////////
 
 post '/new_project' do
@@ -156,8 +123,10 @@ post '/new_project' do
   @project.save!
 
   # redirect '/'
-  redirect 'index2'
-  # erb :index2
+  # erb :index
+  # redirect 'myProjectList'
+  # redirect 'my_project'
+  erb :my_project
 end
 
 get '/project/:id/edit' do
@@ -171,7 +140,8 @@ get "/project/:id/destroy" do
   @project.destroy
 
   # redirect "/"
-  redirect 'index2'
+  # redirect 'myProjectList'
+  erb :my_project
 end
 
 post '/project/:id' do
@@ -191,3 +161,6 @@ get '/project/:id' do
   erb :projectInfo
 end
 
+get '/audiee2' do
+  erb :audiee2
+end

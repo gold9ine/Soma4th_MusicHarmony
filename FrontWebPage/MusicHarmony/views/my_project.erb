@@ -24,7 +24,12 @@
       <div class="middleArea">
         <%= erb :topMenu %>
         <div id="contents">
-          <%= erb :mainRecentSlide %>
+      <%=     
+      @new_project = Project.new 
+      @project = Project.all 
+       @source = Source.all 
+       erb :my_project_list 
+       %>
         </div>
       </div>
       <div class="rightArea">
