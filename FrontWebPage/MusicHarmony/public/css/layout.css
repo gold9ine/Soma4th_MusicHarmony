@@ -27,7 +27,7 @@ float: left;
 text-align: right;
 vertical-align: middle;
 display: table-cell;
-height: 130px;
+height: 150px;
 /*background-color: #333;*/
 width: 100%;
 background:  url('/img/topBannerImg_normalMode.png') no-repeat center;
@@ -171,6 +171,9 @@ text-align: center;
 {
    width: 900px;
 }
+.hr-underBar-PI{
+  margin-top: 30px;
+}
 
 #recent-text{
    text-align: center;
@@ -182,7 +185,7 @@ text-align: center;
 
 
 .bs-example{
-   margin: 20px;
+   /*margin: 20px;*/
    margin-top: 0;
 }
 
@@ -210,21 +213,24 @@ h2{
 .item{
     background: #333;    
     text-align: center;
-    height: 450px !important;
+    /*height: 450px !important;*/
+    height: 380px !important;
 }
 .carousel{
     margin-top: 20px;
 }
 .bs-example{
-  margin: 20px;
+  /*margin: 20px;*/
 }
 .row{
   display: inline-flex;
   margin: 0 auto;
-  width: 75%;
+  width: 90%;
 }
 .col-md-2 {
-  width: 25%
+  /*width: 25%;*/
+  width: 16.6%;
+
 }
 .item{
   background: #d2d2d2;
@@ -234,4 +240,11 @@ h2{
   border: 0px;
   background-color: transparent;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+}
+.form-group {
+margin-bottom: 0px;
+}
+
+.carousel-side-width{
+  width: 5%;
 }

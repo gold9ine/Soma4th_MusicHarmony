@@ -1,5 +1,5 @@
-class Mh < ActiveRecord::Migration
-def change
+class DatabaseCreate < ActiveRecord::Migration
+ def change
     create_table :users do |t|
       t.text :USER_ID
       t.text :USER_PASSWORD
@@ -12,10 +12,9 @@ def change
       t.text :INFO
     end
     create_table :projects do |t|
-      t.integer :PROJECT_NUM
-      t.integer :GOOD_COUNT
-      t.integer :DOWNLOAD_COUNT
-      t.integer :PLAY_COUNT
+      t.integer :GOOD_COUNT, :default => 0
+      t.integer :DOWNLOAD_COUNT, :default => 0
+      t.integer :PLAY_COUNT, :default => 0
       t.integer :PLAY_TIME
       t.timestamps :UPLOAD_DATE
       t.text :ALBUM_IMAGE_PATH
@@ -23,34 +22,48 @@ def change
       t.text :ARTIST
       t.text :PROJECT_INFO
       t.integer :META_NUM
-      t.integer :SOURCE_NUM
-      t.text :USER_ID
+      t.integer :PRI_USER_ID
       t.text :GENRE
     end
     create_table :sources do |t|
-      t.integer :SOURCE_NUM
       t.text :SOURCE_PATH
       t.integer :PROJECT_NUM
       t.text :INSTRUMENT
-      t.text :USER_ID
+      t.integer :PRI_USER_ID
       t.integer :PLAY_TIME
       t.timestamps :UPLOAD_DATE
-      t.integer :PLAY_COUNT
-      t.integer :GOOD_COUNT
+      t.integer :PLAY_COUNT, :default => 0
+      t.integer :DOWNLOAD_COUNT, :default => 0
+      t.integer :GOOD_COUNT, :default => 0
       t.integer :META_NUM
+      t.text :TYPE
       t.text :OFFSET
       t.text :GENRE
     end
       create_table :replies do |t|
-      t.integer :COMMENT_NUM
+      t.integer :SOURCE_NUM
+      t.timestamps :UPLOAD_DATE
+      t.integer :PRI_USER_ID
+      t.text :CONTENTS
+    end
+      create_table :comments do |t|
       t.integer :PROJECT_NUM
       t.timestamps :UPLOAD_DATE
-      t.text :WRITE_USER_ID
+      t.integer :PRI_USER_ID
       t.text :CONTENTS
     end
       create_table :metas do |t|
-      t.integer :META_NUM
+      t.timestamps :UPLOAD_DATE
+      t.integer :SOURCE_NUM
+      t.integer :SOUND_NUM
+    end
+      create_table :sounds do |t|
+      t.text :PROJECT_NUM
+      t.text :SOUND_PATH
+      t.timestamps :UPLOAD_DATE
+      t.integer :PRI_USER_ID
     end
   end
 end
+
 

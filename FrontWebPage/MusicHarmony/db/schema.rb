@@ -10,17 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321023751) do
+ActiveRecord::Schema.define(version: 20140325045650) do
+
+  create_table "comments", force: true do |t|
+    t.integer  "PROJECT_NUM"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "PRI_USER_ID"
+    t.text     "CONTENTS"
+  end
 
   create_table "metas", force: true do |t|
-    t.integer "META_NUM"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "SOURCE_NUM"
+    t.integer  "SOUND_NUM"
   end
 
   create_table "projects", force: true do |t|
-    t.integer  "PROJECT_NUM"
-    t.integer  "GOOD_COUNT"
-    t.integer  "DOWNLOAD_COUNT"
-    t.integer  "PLAY_COUNT"
+    t.integer  "GOOD_COUNT",       default: 0
+    t.integer  "DOWNLOAD_COUNT",   default: 0
+    t.integer  "PLAY_COUNT",       default: 0
     t.integer  "PLAY_TIME"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -29,32 +39,39 @@ ActiveRecord::Schema.define(version: 20140321023751) do
     t.text     "ARTIST"
     t.text     "PROJECT_INFO"
     t.integer  "META_NUM"
-    t.integer  "SOURCE_NUM"
-    t.text     "USER_ID"
+    t.integer  "PRI_USER_ID"
     t.text     "GENRE"
   end
 
   create_table "replies", force: true do |t|
-    t.integer  "COMMENT_NUM"
-    t.integer  "PROJECT_NUM"
+    t.integer  "SOURCE_NUM"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "WRITE_USER_ID"
+    t.integer  "PRI_USER_ID"
     t.text     "CONTENTS"
   end
 
+  create_table "sounds", force: true do |t|
+    t.text     "PROJECT_NUM"
+    t.text     "SOUND_PATH"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "PRI_USER_ID"
+  end
+
   create_table "sources", force: true do |t|
-    t.integer  "SOURCE_NUM"
     t.text     "SOURCE_PATH"
     t.integer  "PROJECT_NUM"
     t.text     "INSTRUMENT"
-    t.text     "USER_ID"
+    t.integer  "PRI_USER_ID"
     t.integer  "PLAY_TIME"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "PLAY_COUNT"
-    t.integer  "GOOD_COUNT"
+    t.integer  "PLAY_COUNT",     default: 0
+    t.integer  "DOWNLOAD_COUNT", default: 0
+    t.integer  "GOOD_COUNT",     default: 0
     t.integer  "META_NUM"
+    t.text     "TYPE"
     t.text     "OFFSET"
     t.text     "GENRE"
   end

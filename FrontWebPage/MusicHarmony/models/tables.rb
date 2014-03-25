@@ -6,7 +6,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 end
 
-class MusicUploader < CarrierWave::Uploader::Base
+class SourceUploader < CarrierWave::Uploader::Base
+  storage :file
+
+  def root
+    'public/'
+  end
+end
+
+class SoundUploader < CarrierWave::Uploader::Base
   storage :file
 
   def root
@@ -33,7 +41,7 @@ end
 class Source < ActiveRecord::Base
   self.table_name = 'sources'
 
-  mount_uploader :SOURCE_PATH, MusicUploader
+  mount_uploader :SOURCE_PATH, SourceUploader
 end
 
 class Reply < ActiveRecord::Base
