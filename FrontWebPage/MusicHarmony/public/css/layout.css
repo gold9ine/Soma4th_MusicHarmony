@@ -23,20 +23,22 @@ text-align: center;
 }
 
 #topBanner{
-float: left;
+/*float: left;*/
 text-align: right;
 vertical-align: middle;
-display: table-cell;
+/*display: table-cell;*/
 height: 150px;
 /*background-color: #333;*/
-width: 100%;
+width: 1440px;
 background:  url('/img/topBannerImg_normalMode.png') no-repeat center;
 background-size: 100% 100%;
+margin: 0 auto;
 }
 
 #loginJoin-form{
-   margin-top: 60px;
+   /*margin-top: 60px;*/
    margin-bottom: 5px;
+   padding-top: 50px;
 }
 
 #loginButton{
@@ -104,9 +106,9 @@ background-size: 100% 100%;
 }
 
 #center{
-   width: 100%;
+ /*  width: 100%;
    height: 500px;
-   float: left;
+   float: left;*/
 }
 #contents{
    height: 100%;
@@ -136,35 +138,55 @@ text-align: center;
 text-align: center;
 }
 
-.leftArea{
+/*.leftArea{
    width: 13.3%;
    height: 100%;
    float: left;
-}
+}*/
 
 .middleArea{
-   width: 73.3%;
+   width: 1024px;
+   margin: 0 auto;
    /*height: 100%;*/
-   float: left;
+   /*float: left;*/
 }
 
-.rightArea{
+/*.rightArea{
    width: 13.3%;
    height: 100%;
    float: right;
+}*/
+.btn{
+display: inline-block;
+margin-bottom: 0;
+font-weight: 400;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+/*background-image: none;*/
+border: 1px solid transparent;
+white-space: nowrap;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+border-radius: 4px;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
 }
-
 .btn-default2{
-   width: 150px;
+   width: 149px;
    background-color: white;
-   padding-top: 10px;
-   padding-bottom: 10px;
+   padding-top: 5px;
+   padding-bottom: 5px;
 }
 .hr-underBar{
    margin-top: 0px;
    margin-bottom: 20px;
    border: 0;
    border-top: 1px solid #C6C4C4;
+   clear: both;
 }
 
 .hr-underBar-short
@@ -181,6 +203,7 @@ text-align: center;
    background-color: rgb(242, 103, 123);
    width: 100px;
    margin: 0 auto;
+   margin-top: 100px;
 }
 
 
@@ -230,10 +253,11 @@ h2{
 .col-md-2 {
   /*width: 25%;*/
   width: 16.6%;
-
+  margin: 0 auto;
 }
 .item{
-  background: #d2d2d2;
+  /*background: #d2d2d2;*/
+  background: transparent;
 }
 .albumImg-a-thumbnail{
   padding: 0px;
@@ -247,4 +271,101 @@ margin-bottom: 0px;
 
 .carousel-side-width{
   width: 5%;
+}
+
+#center{
+  /*margin: 0 auto;*/
+}
+.carousel-control{
+  color: #868686;
+}
+.carousel-control.right{
+  background: transparent;
+}
+.carousel-control.left{
+  background: transparent;
+}
+.carousel-indicators .active{
+  background-color: #868686;
+}
+.carousel-indicators li{
+  border: 1px solid #868686;
+}
+
+.carousel-control, .glyphicon-chevron-right .glyphicon-chevron-left{
+  margin-top: -50px;
+}
+
+#modeChangeButton{
+background: url('/img/logo1.png') no-repeat center;
+border: none;
+cursor: pointer;
+background-size: contain;
+padding: 54px;
+margin: -56px -40px -30px -40px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+}
+.btn-group-right{
+  float: right;
+}
+.btn-group-left{
+  float: left;
+}
+.btn-summit{
+  margin-top: 2px;
+  margin-bottom: 2px;
+  float: right;
+   border: 0px;
+   background: #eb3874;
+   background: -webkit-gradient(linear, left top, left bottom, from(#eb3874), to(#eb3874));
+   background: -webkit-linear-gradient(top, #eb3874, #eb3874);
+   background: -moz-linear-gradient(top, #eb3874, #eb3874);
+   background: -ms-linear-gradient(top, #eb3874, #eb3874);
+   background: -o-linear-gradient(top, #eb3874, #eb3874);
+   padding: 2px 10px;
+   -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 12px;
+   font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
+   text-decoration: none;
+   vertical-align: middle;
+}
+.btn-summit:hover {
+   border-top-color: #e86190;
+   background: #e86190;
+   color: #ccc;
+}
+.btn-summit:active {
+   border-top-color: #eb3874;
+   background: #eb3874;
+}
+.input-text-area{
+  width: 80%;
+}
+#project-replies{
+  padding-top: 20px;
+}
+#source-player{
+  width: 100%;
+height: 15px;
+}
+#project-sources{
+  margin-top: 10px;
+}
+#search-box{
+  width: 180px;
+/*height: 25px;*/
+}
+.navbar{
+   min-height: 0px; 
+ margin-bottom: 0px; 
+}
+.modal{
+  height: 174px;
 }

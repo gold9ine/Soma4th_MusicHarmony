@@ -34,14 +34,24 @@ class Project < ActiveRecord::Base
   mount_uploader :ALBUM_IMAGE_PATH, ImageUploader
 end
 
-class Meta < ActiveRecord::Base
-  self.table_name = 'metas'
+class Sound < ActiveRecord::Base
+  self.table_name = 'sounds'
+
+  mount_uploader :SOUND_PATH, SoundUploader
 end
 
 class Source < ActiveRecord::Base
   self.table_name = 'sources'
 
   mount_uploader :SOURCE_PATH, SourceUploader
+end
+
+class Meta < ActiveRecord::Base
+  self.table_name = 'metas'
+end
+
+class Comment < ActiveRecord::Base
+  self.table_name = 'comments'
 end
 
 class Reply < ActiveRecord::Base

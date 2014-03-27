@@ -52,12 +52,13 @@ get '/artistRanking' do
   erb :artistRanking
 end
 
+# js에서 쓰는 get, 가운데 컨텐츠만 바뀜
 get '/myProjectList' do
   @new_project = Project.new
   @project = Project.all
   @source = Source.all
 
-  erb :my_project_list
+  erb "content/my_project_list".to_sym
 end
 
 get '/edit-page' do
@@ -89,7 +90,7 @@ get '/searchResult' do
 end
 
 get '/projectInfo' do
-
+  # @comments = Comment.all
   erb :projectInfo
 end
 
@@ -122,11 +123,79 @@ post '/new_project' do
   # @projects.ALBUM_IMAGE_PATH = params[:project][:ALBUM_IMAGE_PATH]
   @project.save!
 
-  # redirect '/'
-  # erb :index
-  # redirect 'myProjectList'
-  # redirect 'my_project'
+  redirect 'my_project'
+end
+
+post '/new_comment/:id' do
+  @project = Project.find(params[:id])
+  # @comment = Comment.new(params[:comment])
+  # @source = Source.new
+  @comment = Comment.new
+  @comment.CONTENTS = params[:comment][:CONTENTS]
+  @comment.PROJECT_NUM = params[:id]
+  @comment.save!
+
+  @comments = Comment.all
+  @sources = Source.all
+  # redirect '/project/:id'
+  erb :projectInfo
+end
+
+post '/add_track/:id' do
+  @project = Project.find(params[:id])
+  # @comment = Comment.new
+  @source = Source.new(params[:source])
+  # @source = Source.new
+  # @source.SOURCE_PATH = params[:source][:SOURCE_PATH]
+  @source.PROJECT_NUM = params[:id]
+  @source.save!
+
+  @comments = Comment.all
+  @sources = Source.all
+  erb :projectInfo
+end
+
+get '/delete_comment/:project_id/:comment_id' do
+  @comment = Comment.find(params[:comment_id])
+  @comment.destroy
+  
+  @project = Project.find(params[:project_id])
+  @comments = Comment.all
+  @sources = Source.all
+
+  erb :projectInfo
+end
+
+get '/delete_source/:project_id/:source_id' do
+  @source = Source.find(params[:source_id])
+  @source.destroy
+  
+  @project = Project.find(params[:project_id])
+  @comments = Comment.all
+  @sources = Source.all
+
+  erb :projectInfo
+end
+# get 'my_project' do
+#    @new_project = Project.new 
+#    @project = Project.all 
+#    @source = Source.all 
+
+#    erb :my_project
+
+
+get '/my_project' do
+   @new_project = Project.new 
+   @project = Project.all 
+   @source = Source.all 
   erb :my_project
+end
+
+get "/project/:id/destroy" do
+  @project = Project.find(params[:id])
+  @project.destroy
+
+  redirect 'my_project'
 end
 
 get '/project/:id/edit' do
@@ -135,31 +204,30 @@ get '/project/:id/edit' do
   erb :editProject
 end
 
-get "/project/:id/destroy" do
-  @project = Project.find(params[:id])
-  @project.destroy
+# post '/project/:id' do
+#   @project = Project.find(params[:id])
+#   @project.TITLE = params[:project][:TITLE]
+#   @project.ALBUM_IMAGE_PATH = params[:project][:ALBUM_IMAGE_PATH]
+#   @project.save!
 
-  # redirect "/"
-  # redirect 'myProjectList'
-  erb :my_project
-end
-
-post '/project/:id' do
-  @project = Project.find(params[:id])
-  @project.TITLE = params[:project][:TITLE]
-  @project.ALBUM_IMAGE_PATH = params[:project][:ALBUM_IMAGE_PATH]
-  @project.save!
-
-  redirect '/'
-end
+#   redirect '/'
+# end
 
 get '/project/:id' do
   @project = Project.find(params[:id])
-  @new_resource = Source.new
-  @resource = Source.all
+  # @new_sound = Sound.new
+  # @sound = Sound.all
+  # @new_resource = Source.new
+  @sources = Source.all
+  # @resource = Source.all
+  # @new_comment = Comment.new
+  @comments = Comment.all
+
 
   erb :projectInfo
 end
+
+
 
 get '/audiee2' do
   erb :audiee2

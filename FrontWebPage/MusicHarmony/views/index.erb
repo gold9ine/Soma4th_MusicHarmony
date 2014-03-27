@@ -3,35 +3,27 @@
 <head>
  <title>Music Harmoney</title>
  <!-- Setting 시작 -->
- <%= erb :fileInclude %>
+ <!-- <#%= erb :file_include %> -->
+ <%= erb "layout/file_include".to_sym%>
 </head>
 <body>
   <div id="scrollArea" class="normal">
     <div id="topBanner" class="topBottom">
       <!-- topBanner -->
-      <div class="leftArea">
-      </div>
       <div class="middleArea">
-        <%= erb :loginForm %>
-      </div>
-      <div class="rightArea">
+        <%= erb "layout/login-form".to_sym%>
       </div>
     </div>
-
     <div id="center">
-      <div class="leftArea">
-      </div>
       <div class="middleArea">
-        <%= erb :topMenu %>
+        <%= erb "layout/top-menu".to_sym%>
         <div id="contents">
-          <%= erb :mainRecentSlide %>
+          <%= erb "content/main-recent-slide".to_sym %>
         </div>
       </div>
-      <div class="rightArea">
-      </div>
     </div>
-    <%= erb :bottomInfo %>
+    <%= erb "layout/bottom-info".to_sym %>
   </div>
-  <%= erb :playArea %>
+  <%= erb "layout/play-area".to_sym %>
 </body>
 </html>
