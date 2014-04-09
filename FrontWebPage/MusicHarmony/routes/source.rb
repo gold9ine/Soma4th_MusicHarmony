@@ -6,7 +6,8 @@ post '/add_track/:id' do
 
   @comments = Comment.all
   @sources = Source.all
-  erb :projectInfo
+  # erb :projectInfo
+  erb 'project/projectInfo'.to_sym
 end
 
 get '/delete_source/:project_id/:source_id' do
@@ -16,6 +17,6 @@ get '/delete_source/:project_id/:source_id' do
   @project = Project.find(params[:project_id])
   @comments = Comment.all
   @sources = Source.all
-
-  erb :projectInfo
+  # erb :projectInfo
+  erb 'project/projectInfo'.to_sym
 end

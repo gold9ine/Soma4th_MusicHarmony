@@ -1,2 +1,6 @@
+require "./config/sinatra"
+require "./config/database"
+
 require "./runner"
+
 require "sinatra/activerecord/rake"

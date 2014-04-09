@@ -1,0 +1,12 @@
+<div class="bs-logerror">
+	<div class="alert alert-danger">
+		<% if register_success? %>
+			<p id="logerror-head">register Fail</p>
+			<% session[:register_fail] = nil %>
+		<% else %>
+			<p id="logerror-head">Login Fail</hp>
+		<% end %>
+			<hr>
+			<a href="/" id="logerror-font">goto main page</p>
+	</div>
+</div>

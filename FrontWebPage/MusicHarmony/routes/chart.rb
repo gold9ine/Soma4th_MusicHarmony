@@ -1,4 +1,4 @@
 get '/harmonyChart' do
 
-  erb :harmonyChart
+  erb 'chart/harmonyChart'.to_sym
 end

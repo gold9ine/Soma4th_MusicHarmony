@@ -1,4 +1,4 @@
-.editor #topBanner{
+.detail #topBanner{
 /*float: left;*/
 text-align: right;
 vertical-align: middle;
@@ -6,7 +6,7 @@ vertical-align: middle;
 height: 150px;
 /*background-color: #333;*/
 width: 1440px;
-background:  url('/img/topBannerImg_editorMode.png') no-repeat center;
+background:  url('/img/topBannerImg_detailMode.png') no-repeat center;
 background-size: 100% 100%;
 margin: 0 auto;
 }

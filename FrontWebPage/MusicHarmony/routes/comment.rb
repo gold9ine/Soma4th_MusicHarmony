@@ -7,7 +7,8 @@ post '/new_comment/:id' do
 
   @comments = Comment.all
   @sources = Source.all
-  erb :projectInfo
+
+  erb 'project/projectInfo'.to_sym
 end
 
 get '/delete_comment/:project_id/:comment_id' do
@@ -18,5 +19,5 @@ get '/delete_comment/:project_id/:comment_id' do
   @comments = Comment.all
   @sources = Source.all
 
-  erb :projectInfo
+  erb 'project/projectInfo'.to_sym
 end

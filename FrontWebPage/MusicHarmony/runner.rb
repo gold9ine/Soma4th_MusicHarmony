@@ -26,9 +26,10 @@ require './routes/edit.rb'
 require './routes/project.rb'
 require './routes/rank.rb'
 require './routes/source.rb'
+require './routes/timeline.rb'
 require './routes/user.rb'
 
 get '/' do
-
-  erb :index
+  # erb :harmonyChart
+  erb 'chart/harmonyChart'.to_sym
 end

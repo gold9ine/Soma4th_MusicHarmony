@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Music Harmoney</title>
+<%= erb "layout/file_include".to_sym%>
+</head>
+
+<body>
+  <div id="container">
+    <% if flash[:notice]  %>
+      <div class="alert alert-error">
+        <p class="text-danger"><%= flash[:notice] %></p>
+      </div>
+    <% end %>
+
+    <div id="header">
+      <%= erb 'layout/header'.to_sym %>
+    </div>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+
+    <div id="footer">
+    </div>
+  </div>
+</body>
+</html>
