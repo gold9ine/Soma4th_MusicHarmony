@@ -8,7 +8,7 @@
 		</div>
 
 		<div class="col-xs-6 col-md-6">
-			<form class="form-horizontal" role="form" name="register-form" action="/regist">
+			<form class="form-horizontal" role="form" name="register-form" action="/regist" method="post">
 				<div class="form-group">
 					<h4 >Register</h4>
 				</div>
@@ -39,10 +39,11 @@
 			    </div>
 			  </div>
 
+			  
 			  <div class="form-group">
-			    <label for="inputPassword" class="control-label">Ganre</label>
+			    <label for="inputPart" class="control-label">Instrument Part</label>
 			    <div class="">
-			      <input type="text" class="register-form-control" id="inputGanre" placeholder="Ganre">
+			      <input type="text" name ="user[PART]" class="register-form-control" id="inputGanre" placeholder="INSTRUMENT PART">
 			    </div>
 			  </div>
 
@@ -55,51 +56,6 @@
 
 
 		  </form>
-		</div>
-  <!-- 
-	<div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="register-modal" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	        <h4 class="modal-title">Register</h4>
-	      </div>
-
-	      	<form id="register-form" name="register-form" action="/users" method="post" role="form">
-		        <div class="modal-body">
-		          <fieldset>
-	              <div class="form-group">
-	                <label for="name">Nick Name</label>
-	                <input type="text"
-	                  name="user[name]" id="name" class="form-control" required="required"
-	                  maxlength="15" placeholder="Nick Name" />
-	              </div>
-
-	              <div class="form-group">
-	                <label for="email">ID</label>
-	                <input type="email"
-	                  name="user[email]" id="email" class="form-control" required="required"
-	                  maxlength="17" placeholder="email@email.com" />
-	              </div>
-
-	              <div class="form-group">
-	                <label for="password">PW</label>
-	                <input type="password"
-	                  name="user[password]" id="password" class="form-control" required="required"
-	                  maxlength="17" placeholder="********" />
-	              </div>
-	            </fieldset>
-	          </div>
-
-	          <div class="modal-footer">
-	            <button type="submit" class="btn btn-primary">회원가입</button>
-	          </div>
-	      	</form>
-
-
-		    </div>
-		  </div>
-		</div> -->
-		
+		</div>		
 	</div>
 </body>

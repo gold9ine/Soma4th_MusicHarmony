@@ -27,6 +27,32 @@
     </div>
   </div>
   <hr class="hr-underBar">
+
+
+
 <% else %>
-<div id="topBanner" class="topBottom"/>
+
+  <div id="topBanner" class="topBottom">
+    <div class="middleArea">
+      <form class="form-inline login-top" role="form" action="/login" method="post">
+        <div class="form-group" >
+          <label class="sr-only" for="InputEmail">Email address</label>
+          <input type="email" class="form-control" name="user[EMAIL]" id="InputEmail" placeholder="Enter email">
+        </div>
+        
+        <div class="form-group">
+          <label class="sr-only" for="InputPassword" >Password</label>
+          <input type="password" class="form-control" name="user[PASSWORD]" id="InputPassword" placeholder="Password">
+        </div>
+        
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me </input>
+          </label>
+        </div>
+        
+        <button type="submit" class="btn btn-default">Sign in</button>
+      </form>
+    </div>
+  </div>
 <% end %>

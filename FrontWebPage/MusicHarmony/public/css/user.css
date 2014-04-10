@@ -32,3 +32,14 @@
 	background-size: 100% 100%;
 	margin: 0 auto;
 }
+
+.login-label
+{
+	margin-bottom: 0px;
+	font-size: 12px;
+}
+
+.login-top
+{
+	padding-top: 80px;
+}

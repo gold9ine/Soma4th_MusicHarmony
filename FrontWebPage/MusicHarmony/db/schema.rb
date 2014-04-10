@@ -77,16 +77,16 @@ ActiveRecord::Schema.define(version: 20140325045650) do
   end
 
   create_table "users", force: true do |t|
-    t.text     "USER_ID"
-    t.text     "USER_PASSWORD"
-    t.text     "NICKNAME"
+    t.text     "PASSWORD"
+    t.text     "NAME"
     t.text     "EMAIL"
     t.text     "PART"
     t.text     "AFFILIATE_BAND"
-    t.text     "PICTURE_PATH"
+    t.text     "PICTURE"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "INFO"
+    t.text     "SALT"
   end
 
 end
