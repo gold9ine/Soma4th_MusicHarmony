@@ -11,6 +11,9 @@ post '/regist' do
   @user.password = BCrypt::Engine.hash_secret(params[:user][:password], @user.salt)
   @user.name = params[:user][:name]
 
+  @user.save!
+  session[:user_id] = @user.id
+  erb '/'
   # if @user.save
   #   session[:user_id] = @user.id
   #   {:status => 'success', :redirect_to => '/'}.to_json
