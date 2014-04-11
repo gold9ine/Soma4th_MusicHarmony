@@ -6,8 +6,15 @@ body{
  padding: 0;
 }
 
+.clear{
+  clear: both;
+}
+.middleArea{
+ width: 1024px;
+ margin: 0 auto;
+}
+
 #topBanner{
-  text-align: right;
   vertical-align: middle;
   height: 150px;
   width: 1440px;
@@ -16,146 +23,37 @@ body{
   margin: 0 auto;
 }
 
-#loginJoin-form{
- margin-bottom: 5px;
+/* 여기부터 header 부분 user nickname, search-box 영역*/
+#banner-user-search-area{
  padding-top: 50px;
+ text-align: right;
+}
+#modeChangeButton{
+  background: url('/img/logo1.png') no-repeat center;
+  border: none;
+  cursor: pointer;
+  background-size: contain;
+  padding: 54px;
+  margin: -56px 0px -30px 0px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+}
+.menu-btn{
+ width: 149px;
+ background-color: white;
+ padding-top: 5px;
+ padding-bottom: 5px;
+}
+/* 여기까지 header 부분 ////////////////////////////////////////*/
+
+.hr-underBar{
+ margin-top: 0px;
+ border-top: 1px solid #C6C4C4;
+ clear: both;
 }
 
-#loginButton{
- border: 0px;
- background: #cc0ebf;
- background: -webkit-gradient(linear, left top, left bottom, from(#cc0ebf), to(#cc0ebf));
- background: -webkit-linear-gradient(top, #cc0ebf, #cc0ebf);
- background: -moz-linear-gradient(top, #cc0ebf, #cc0ebf);
- background: -ms-linear-gradient(top, #cc0ebf, #cc0ebf);
- background: -o-linear-gradient(top, #cc0ebf, #cc0ebf);
- padding: 4px 8px;
- -webkit-border-radius: 0px;
- -moz-border-radius: 0px;
- border-radius: 0px;
- -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
- -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
- box-shadow: rgba(0,0,0,1) 0 1px 0;
- text-shadow: rgba(0,0,0,.4) 0 1px 0;
- color: #ffffff;
- font-size: 10px;
- font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
- text-decoration: none;
- vertical-align: middle;
-}
-#loginButton:hover {
- border-top-color: #ba47b2;
- background: #ba47b2;
- color: #ffffff;
-}
-#loginButton:active {
- border-top-color: #000000;
- background: #000000;
-}
-
-#joinButton {
- border: 0px;
- background: #1132d6;
- background: -webkit-gradient(linear, left top, left bottom, from(#1132d6), to(#1132d6));
- background: -webkit-linear-gradient(top, #1132d6, #1132d6);
- background: -moz-linear-gradient(top, #1132d6, #1132d6);
- background: -ms-linear-gradient(top, #1132d6, #1132d6);
- background: -o-linear-gradient(top, #1132d6, #1132d6);
- padding: 4px 8px;
- -webkit-border-radius: 0px;
- -moz-border-radius: 0px;
- border-radius: 0px;
- -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
- -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
- box-shadow: rgba(0,0,0,1) 0 1px 0;
- text-shadow: rgba(0,0,0,.4) 0 1px 0;
- color: #ffffff;
- font-size: 10px;
- font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
- text-decoration: none;
- vertical-align: middle;
-}
-#joinButton:hover {
- border-top-color: #536bd9;
- background: #536bd9;
- color: #ffffff;
-}
-#joinButton:active {
- border-top-color: #000000;
- background: #000000;
-}
-
-#content{
-  width: 1024px;
-  margin: 0 auto;
-}
-#contentsFrame{
- width: 100%;
- height: 100%;
- border-width: inherit;
-}
-
-#topMenu{
-  text-align: center;
-}
-
-#bottom{
- width: 100%;
- height: 100px;
- float: left;
- background-color: red;
-}
-
-.topBottom{
-  text-align: center;
-}
-
-
-   .middleArea{
-     width: 1024px;
-     margin: 0 auto;
-
-   }
-
-   .btn{
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: 400;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    /*background-image: none;*/
-    border: 1px solid transparent;
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    border-radius: 4px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  .btn-default2{
-   width: 149px;
-   background-color: white;
-   padding-top: 5px;
-   padding-bottom: 5px;
- }
- .hr-underBar{
-   margin-top: 0px;
-   margin-bottom: 20px;
-   border: 0;
-   border-top: 1px solid #C6C4C4;
-   clear: both;
- }
-
- .hr-underBar-short
- {
-   width: 900px;
- }
- .hr-underBar-PI{
-  margin-top: 30px;
+.hr-underBar-short
+{
+ width: 88%;
 }
 
 #recent-text{
@@ -167,166 +65,72 @@ body{
  margin-top: 100px;
 }
 
-
-.bs-example{
- /*margin: 20px;*/
- margin-top: 0;
-}
-
 #project-information-textarea{
  width: 100%
 }
-
 #project-list-area{
  width: 40%;
  float: right;
+}
+#input-track-area{
+  width: 356px;
+}
+#input-text-area{
+  width: 356px;
 }
 
 .projcet-img{
  width: 150px;
  height: auto;
 }
+.source-player-area{
+  width: 100%;
+  height: 15px;
+}
 
-h2{
-  margin: 0;     
-  color: #666;
-  padding-top: 90px;
-  font-size: 52px;
-  font-family: "trebuchet ms", sans-serif;    
-}
-.item{
-  background: #333;    
+/*carousel    여기부터 카로셀 //////////////////////////////////////*/
+#myCarousel .item{
   text-align: center;
-  /*height: 450px !important;*/
   height: 380px !important;
+  background: transparent;
 }
-.carousel{
-  margin-top: 20px;
-}
-.bs-example{
-  /*margin: 20px;*/
-}
-.row{
+#myCarousel .row{
   display: inline-flex;
   margin: 0 auto;
   width: 90%;
 }
-.col-md-2 {
-  /*width: 25%;*/
-  width: 16.6%;
-  margin: 0 auto;
-}
-.item{
-  /*background: #d2d2d2;*/
-  background: transparent;
-}
-.albumImg-a-thumbnail{
+
+#myCarousel .albumImg-a-thumbnail{
   padding: 0px;
   border: 0px;
   background-color: transparent;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
 }
-.form-group {
+#myCarousel .form-group {
   margin-bottom: 0px;
 }
 
-.carousel-side-width{
+#myCarousel .carousel-side-width{
   width: 5%;
 }
 
-#center{
-  /*margin: 0 auto;*/
-}
-.carousel-control{
+#myCarousel .carousel-control{
   color: #868686;
 }
-.carousel-control.right{
+#myCarousel .carousel-control.right{
   background: transparent;
 }
-.carousel-control.left{
+#myCarousel .carousel-control.left{
   background: transparent;
 }
-.carousel-indicators .active{
+#myCarousel .carousel-indicators .active{
   background-color: #868686;
 }
-.carousel-indicators li{
+#myCarousel .carousel-indicators li{
   border: 1px solid #868686;
 }
 
-.carousel-control, .glyphicon-chevron-right .glyphicon-chevron-left{
+#myCarousel .carousel-control, .glyphicon-chevron-right .glyphicon-chevron-left{
   margin-top: -50px;
 }
-
-#modeChangeButton{
-  background: url('/img/logo1.png') no-repeat center;
-  border: none;
-  cursor: pointer;
-  background-size: contain;
-  padding: 54px;
-  margin: -56px -40px -30px -40px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
-}
-.btn-group-right{
-  float: right;
-}
-.btn-group-left{
-  float: left;
-}
-.btn-summit{
-  margin-top: 2px;
-  margin-bottom: 2px;
-  float: right;
-  border: 0px;
-  background: #eb3874;
-  background: -webkit-gradient(linear, left top, left bottom, from(#eb3874), to(#eb3874));
-  background: -webkit-linear-gradient(top, #eb3874, #eb3874);
-  background: -moz-linear-gradient(top, #eb3874, #eb3874);
-  background: -ms-linear-gradient(top, #eb3874, #eb3874);
-  background: -o-linear-gradient(top, #eb3874, #eb3874);
-  padding: 2px 10px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  box-shadow: rgba(0,0,0,1) 0 1px 0;
-  text-shadow: rgba(0,0,0,.4) 0 1px 0;
-  color: white;
-  font-size: 12px;
-  font-family: 'Lucida Grande', Helvetica, Arial, Sans-Serif;
-  text-decoration: none;
-  vertical-align: middle;
-}
-.btn-summit:hover {
- border-top-color: #e86190;
- background: #e86190;
- color: #ccc;
-}
-.btn-summit:active {
- border-top-color: #eb3874;
- background: #eb3874;
-}
-.input-text-area{
-  width: 80%;
-}
-#project-replies{
-  padding-top: 20px;
-}
-#source-player{
-  width: 100%;
-  height: 15px;
-}
-#project-sources{
-  margin-top: 10px;
-}
-#search-box{
-  width: 180px;
-  /*height: 25px;*/
-}
-.navbar{
- min-height: 0px; 
- margin-bottom: 0px; 
-}
-.modal{
-  height: 174px;
-}
+/* 여기까지 카로셀 //////////////////////////////////*/
