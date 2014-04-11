@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :sources
   has_many :sounds  
 
-  validates :PART, :presence => true
+  validates :PART,:EMAIL,:PASSWORD,:NAME, :presence => true
 
   def self.latest
     order(:created_at => :desc)

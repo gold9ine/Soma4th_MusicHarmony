@@ -1,15 +1,15 @@
 class DatabaseCreate < ActiveRecord::Migration
  def change
     create_table :users do |t|
-      t.text :USER_ID
-      t.text :USER_PASSWORD
-      t.text :NICKNAME
+      t.text :PASSWORD
+      t.text :NAME
       t.text :EMAIL
       t.text :PART
       t.text :AFFILIATE_BAND
-      t.text :PICTURE_PATH
+      t.text :PICTURE
       t.timestamps :SIGNUP_DATE
       t.text :INFO
+      t.text :SALT
     end
     create_table :projects do |t|
       t.integer :GOOD_COUNT, :default => 0

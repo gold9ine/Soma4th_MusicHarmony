@@ -1,0 +1,61 @@
+<body>
+	<div class="row">
+
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<form class="form-horizontal" role="form" name="register-form">
+				<img src="/img/logo2.png" class="music-harmony"/>
+			</form>
+		</div>
+
+		<div class="col-xs-6 col-md-6">
+			<form class="form-horizontal" role="form" name="register-form" action="/regist" method="post">
+				<div class="form-group">
+					<h4 >Register</h4>
+				</div>
+				
+				<div class="form-group">
+			    <label for="inputName" class="control-label">Name</label>
+			    <div class="">
+			      <input type="text" name="user[NAME]" class="register-form-control" id="inputName" placeholder="Name">
+			    </div>
+			  </div>
+
+				<div class="form-group">
+		    	<label for="inputEmail" class="control-label">Email</label>
+			    <input type="email" name="user[EMAIL]" class="register-form-control" id="inputEmail3" placeholder="Email">
+			  </div>
+
+			  <div class="form-group">
+			    <label for="inputPassword" class="control-label">Password</label>
+			    <div class="">
+			      <input type="password" name="user[PASSWORD]" class="register-form-control" id="inputPassword3" placeholder="Password">
+			    </div>
+			  </div>
+
+			  <div class="form-group">
+			    <label for="inputPassword" class="control-label">Comfirm Password</label>
+			    <div class="">
+			      <input type="password" class="register-form-control" id="ComfirmPassword" placeholder="Comfirm Password">
+			    </div>
+			  </div>
+
+			  
+			  <div class="form-group">
+			    <label for="inputPart" class="control-label">Instrument Part</label>
+			    <div class="">
+			      <input type="text" name ="user[PART]" class="register-form-control" id="inputGanre" placeholder="INSTRUMENT PART">
+			    </div>
+			  </div>
+
+
+			  <div class="form-group">
+			    <div class="submit-top">
+			      <button type="submit" class="btn btn-primary">Regist</button>
+			    </div>
+			  </div>
+
+
+		  </form>
+		</div>		
+	</div>
+</body>

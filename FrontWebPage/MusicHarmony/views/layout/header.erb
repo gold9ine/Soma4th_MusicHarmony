@@ -1,3 +1,4 @@
+<% if logged_in? %>
 <div id="topBanner" class="normal">
   <div class="middleArea">
     <div id="banner-user-search-area">
@@ -11,19 +12,48 @@
       </div>
     </div>
   </div>
-</div>
 
-<div id="topMenu" class="text-center">
-  <div class="btn-group">
-    <button onclick="location.href='/harmonyChart'" class="btn menu-btn" id="harmonyChartButton"> Harmony Chart </button>
-    <button onclick="location.href='/artistRanking'" class="btn menu-btn" id="artistRankingButton"> Artist Rank </button>
+  <div id="topMenu">
+    <div class="btn-group btn-group-left">
+      <button onclick="location.href='/harmonyChart'" class="btn btn-default2" id="harmonyChartButton"> Harmony Chart </button>
+      <button onclick="location.href='/artistRanking'" class="btn btn-default2" id="artistRankingButton"> Artist Rank </button>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-default" id="modeChangeButton"></button>
+    </div>
+    <div class="btn-group btn-group-right">
+      <button onclick="location.href='/myProject'" class="btn btn-default2" id="myProjectButton"> My Project </button>
+      <button onclick="location.href='/timeline'" class="btn btn-default2" id="timelineButton"> Timeline </button>
+    </div>
   </div>
-  <div class="btn-group">
-    <button class="btn" id="modeChangeButton"></button>
+  <hr class="hr-underBar">
+
+
+
+<% else %>
+
+  <div id="topBanner" class="topBottom">
+    <div class="middleArea">
+      <form class="form-inline login-top" role="form" action="/login" method="post">
+        <div class="form-group" >
+          <label class="sr-only" for="InputEmail">Email address</label>
+          <input type="email" class="form-control" name="user[EMAIL]" id="InputEmail" placeholder="Enter email">
+        </div>
+        
+        <div class="form-group">
+          <label class="sr-only" for="InputPassword" >Password</label>
+          <input type="password" class="form-control" name="user[PASSWORD]" id="InputPassword" placeholder="Password">
+        </div>
+        
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me </input>
+          </label>
+        </div>
+        
+        <button type="submit" class="btn btn-default">Sign in</button>
+      </form>
+    </div>
   </div>
-  <div class="btn-group">
-    <button onclick="location.href='/myProject'" class="btn menu-btn" id="myProjectButton"> My Project </button>
-    <button onclick="location.href='/timeline'" class="btn menu-btn" id="timelineButton"> Timeline </button>
-  </div>
-</div>
-<hr class="hr-underBar clear">
+<% end %>
+
