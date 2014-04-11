@@ -3,67 +3,59 @@
   >
   <fieldset>
     <legend>Create Project</legend>
-  <div>
-    <!-- <span class="help-block">Please complete here.</span> -->
-    <div class="form-group">
-    <label>Title</label>
-    <input type="text" name="project[TITLE]" class="form-control" placeholder="Project Name"></input>
-    </div>
+    <div>
+      <!-- <span class="help-block">Please complete here.</span> -->
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="project[TITLE]" class="form-control" placeholder="Project Name"></input>
+      </div>
 
-    <div class="form-group">
-    <label>Artist</label>
-    <input type="text" name="project[ARTIST]" class="form-control" placeholder="User Name"></input>
-    </div>
+      <div class="form-group">
+        <label>Artist</label>
+        <input type="text" name="project[ARTIST]" class="form-control" placeholder="User Name"></input>
+      </div>
 
-    <label>Genre</label>
-    <select name="project[GENRE]" class="form-control" id="normalSelect">
-                <option>Rock</option>
-                <option>Classical</option>
-                <option>Jazz</option>
-                <option>Bluse</option>
-                <option>RnB</option>
-                <option>HipHop</option>
-    </select>
-    <div class="form-group">
-    <label>Image</label>
-    <input type="file" name="project[ALBUM_IMAGE_PATH]" class="form-control" size="30" /></input>
-    </div>
+      <label>Genre</label>
+      <select name="project[GENRE]" class="form-control" id="normalSelect">
+        <option>Rock</option>
+        <option>Classical</option>
+        <option>Jazz</option>
+        <option>Bluse</option>
+        <option>RnB</option>
+        <option>HipHop</option>
+      </select>
+      <div class="form-group">
+        <label>Image</label>
+        <input type="file" name="project[ALBUM_IMAGE_PATH]" class="form-control" size="30" /></input>
+      </div>
 
-    <div class="form-group">
-    <label>Information</label>
-    <textarea id="project-information-textarea" type="text" name="project[PROJECT_INFO]" placeholder="Project Information"></textarea>
-    </div>
+      <div class="form-group">
+        <label>Information</label>
+        <textarea id="project-information-textarea" type="text" name="project[PROJECT_INFO]" placeholder="Project Information"></textarea>
+      </div>
 
-    <button type="submit" class="btn btn-primary btn-summit">submit</button>
-  </div>
+      <button type="submit" class="btn btn-primary btn-xs pull-right">submit</button>
+    </div>
   </fieldset>
 </form>
 </div>
 
 <div class="bs-example" id="project-list-area">
-<legend>Project List</legend>
-<div id="project-list">
-  <% @project.each do |project| %>
-  <div class="projects">
-    <a href="/project/<%= project.id %>">
-      <h3><%= project.TITLE %></h3></a>
-
-        <!-- <img width="150" src="<
-        #%= project.ALBUM_IMAGE_PATH_url 
-        %>"/> -->
-        
+  <legend>Project List</legend>
+  <div id="project-list">
+    <% @project.each do |project| %>
+    <div class="projects">
+      <h3><%= project.TITLE %></h3>
+      <a href="/project/<%= project.id %>">
         <img class="projcet-img" src="<%= project.ALBUM_IMAGE_PATH_url %>"/>
-        <h5>Info : <%= project.PROJECT_INFO %></h5>
-      <div>
-      <a class="btn btn-primary btn-summit" role="button" href="/project/<%= project.id %>/destroy">
-        delete
       </a>
-<!--       <a href="/project/<%= project.id %>/edit">
-        edit project
-      </a> -->
+      <h5>Info : <%= project.PROJECT_INFO %></h5>
+      <div>
+        <a class="btn btn-danger btn-xs pull-right" role="button" href="/project/<%= project.id %>/destroy">
+          delete
+        </a>
+      </div>
     </div>
-    </div>
-    <!-- <br> -->
     <hr class="hr-underBar">
     <% end %>
   </div>
