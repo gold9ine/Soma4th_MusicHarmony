@@ -1,8 +1,8 @@
 .normal #topBanner{
 text-align: right;
 vertical-align: middle;
-height: 150px;
-width: 1440px;
+height: 230px;
+width: 1920px;
 background:  url('/img/topBannerImg_normalMode.png') no-repeat center;
 background-size: 100% 100%;
 margin: 0 auto;
