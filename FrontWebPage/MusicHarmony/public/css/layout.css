@@ -10,17 +10,26 @@ body{
   clear: both;
 }
 .middleArea{
- width: 1024px;
+ /*width: 1024px;*/
+ /*width: 1400px;*/
+ width: 70%;
  margin: 0 auto;
 }
-
+#topBanner-extention{
+  background-color: black;
+}
 #topBanner{
   vertical-align: middle;
-  height: 150px;
-  width: 1440px;
-  background:  url('/img/topBannerImg_normalMode.png') no-repeat center;
-  background-size: 100% 100%;
-  margin: 0 auto;
+/* height: 150px; */
+/* width: 1440px; */
+height: 230px;
+width: 1920px;
+max-width: 100%;
+max-height: 100%;
+/* height: auto; */
+background: url('/img/topBannerImg_normalMode.png') no-repeat center;
+background-size: 100% 100%;
+margin: 0 auto;
 }
 
 /* 여기부터 header 부분 user nickname, search-box 영역*/
@@ -28,17 +37,27 @@ body{
  padding-top: 50px;
  text-align: right;
 }
+#modeChange-area{
+  text-align: center;
+}
 #modeChangeButton{
   background: url('/img/logo1.png') no-repeat center;
   border: none;
   cursor: pointer;
   background-size: contain;
-  padding: 54px;
-  margin: -56px 0px -30px 0px;
+  /*padding: 54px;*/
+  /*padding: 80px;*/
+  width: 160px;
+  height: 160px;
+  /*margin: -112px 0px -25px 0px;*/
+  margin: -90px 0px 0px 0px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
 }
 .menu-btn{
- width: 149px;
+ /*width: 149px;*/
+ /*width: 200px;*/
+ width: 25%;
+ height: 50px;
  background-color: white;
  padding-top: 5px;
  padding-bottom: 5px;
@@ -91,7 +110,8 @@ body{
 /*carousel    여기부터 카로셀 //////////////////////////////////////*/
 #myCarousel .item{
   text-align: center;
-  height: 380px !important;
+  /*height: 380px !important;*/
+  /*height: 475px !important;*/
   background: transparent;
 }
 #myCarousel .row{
@@ -125,6 +145,9 @@ body{
 }
 #myCarousel .carousel-indicators .active{
   background-color: #868686;
+}
+#myCarousel .carousel-indicators {
+  bottom: -30px;
 }
 #myCarousel .carousel-indicators li{
   border: 1px solid #868686;

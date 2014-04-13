@@ -31,5 +31,11 @@ require './routes/user.rb'
 
 get '/' do
   # erb :harmonyChart
-  erb 'chart/harmonyChart'.to_sym
+  session[:user_id]="NickName"
+  if logged_in?
+    erb 'chart/harmonyChart'.to_sym
+  else
+    redirect '/user'
+  end
+  
 end
