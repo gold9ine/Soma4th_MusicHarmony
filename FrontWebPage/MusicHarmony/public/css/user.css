@@ -33,8 +33,14 @@
 	margin: 0 auto;
 }
 
+.login-right
+{
+	position: relative; left: 500px; 
+}
+
 .login-label
 {
+	margin-right: 10px;
 	margin-bottom: 0px;
 	font-size: 12px;
 }
