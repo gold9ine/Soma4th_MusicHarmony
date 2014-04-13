@@ -9,6 +9,12 @@ body{
 .clear{
   clear: both;
 }
+.right{
+  float: right;
+}
+.left{
+  float: left;
+}
 .middleArea{
  /*width: 1024px;*/
  /*width: 1400px;*/
@@ -46,12 +52,34 @@ margin: 0 auto;
   cursor: pointer;
   background-size: contain;
   /*padding: 54px;*/
-  /*padding: 80px;*/
+  padding: 80px;
   width: 160px;
   height: 160px;
   /*margin: -112px 0px -25px 0px;*/
-  margin: -90px 0px 0px 0px;
+  margin: -110px 0px 0px 0px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+}
+#user-nickname{
+  color: white;
+  text-decoration: none;
+  /*float: right;*/
+}
+#logout-button{
+  content:url("/img/logout-button.png") no-repeat center;
+  background-size: contain;
+  width: 24px;
+  height: auto;
+  float: right;
+}
+#home-button{
+  content:url("/img/home-button.png") no-repeat center;
+  background-size: contain;
+  width: 26px;
+  height: auto;
+  float: right;
+}
+#search-box-form{
+    clear: both;
 }
 .menu-btn{
  /*width: 149px;*/

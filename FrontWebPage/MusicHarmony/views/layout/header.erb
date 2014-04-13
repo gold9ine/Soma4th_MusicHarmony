@@ -3,17 +3,40 @@
   <div id="topBanner" class="normal">
     <div class="middleArea">
       <div id="banner-user-search-area">
-        <div id="banner-user-area" class="navbar-form">
-          <button id="loginButton">LogIn</button>
-          <button id="joinButton">Join</button>
+        <div id="banner-user-area" class="navbar-form pannel-heading">
+          <ul class="list-unstyled list-inline">
+            <li>
+              <a id="user-nickname" href="/">
+                <h2><%= session[:user_id] %></h2>
+              </a>
+            </li>
+            <li>
+              <a href="/user" TITLE="Log out">
+                <img id="logout-button"></img>
+              </a>
+            </li>
+            <li>
+              <a href="/" TITLE="Home">
+                <img id="home-button"></img>
+              </a>
+            </li>
+          </ul>
         </div>
-        <div class="navbar-form" role="search">
-          <input id="search-box" type="search" results="5" name="s" placeholder="Search" autosave="unique">
+ <!--        <div id="search-box-form" class="navbar-form" role="search">
+          <input type="search" results="5" name="s" placeholder="Search" autosave="unique">
           <button type="submit" class="btn btn-success btn-xs"> Go </button>
-        </div>
+        </div> -->
+
+        <form class="navbar-form clear" role="search">
+          <div class="form-group">
+            <input id="search-box" type="search" class="form-control" placeholder="Search" results="5" name="s" autosave="unique">
+          </div>
+          <button type="submit" class="btn btn-primary ">Go</button>
+        </form>
+
       </div>
       <div id="modeChange-area">
-        <button id="modeChangeButton"></button>
+        <img id="modeChangeButton"></img>
       </div>
     </div>
   </div>

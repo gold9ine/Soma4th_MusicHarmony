@@ -1,5 +1,5 @@
 $(function(){                              
-    $("button#modeChangeButton").on('click', function(){
+    $("img#modeChangeButton").on('click', function(){
         var containerArea = $('#container');
 
         if(containerArea.hasClass('normal'))
@@ -13,7 +13,7 @@ $(function(){
           containerArea.addClass('normal');
         }
     });
-    
+
     $("button#project-delete-btn").on('click', function(){
         console.log("ddd");
         $("#content").load("/myProject");
