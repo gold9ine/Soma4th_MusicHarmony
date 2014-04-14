@@ -1,6 +1,6 @@
 helpers do
   def logged_in?
-    cookies[:user_id] != nil || session[:user_id];
+    cookies[:user_id] != ""
   end
 
   def current_user

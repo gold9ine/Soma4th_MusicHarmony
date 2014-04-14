@@ -1,38 +1,40 @@
+
 <body class="regist-background">
 
-		<div class="row">
-			<div class="col-xs-12 col-sm-6 col-md-6">
+		<form class="regist-height">
+			<div 
+			<div class="col-xs-12 col-sm-6 col-md-6 regist-padding">
 				<form class="form-horizontal" role="form" name="register-form">
 					<img src="/img/logo2.png" class="login-music-harmony"/>
 				</form>
 			</div>
 
-			<div class="col-xs-6 col-md-6">
-				<form class="form-horizontal" role="form" name="register-form" action="/regist" method="post">
-					<div class="form-group">
+			<div class="col-xs-6 col-md-6 regist-padding">
+				<form class="form-horizontal" id="register-form" name="register-form" role="form" name="register-form" action="/regist" method="post">
+					<div class="form-group regist-form-padding">
 						<h4 >Register</h4>
 					</div>
 					
-					<div class="form-group">
+					<div class="form-group regist-form-padding">
 				    <label for="inputName" class="control-label">Name</label>
-				    <div class="">
+				    <div class="regist-textbox">
 				      <input type="text" name="user[NAME]" class="register-form-control" id="inputName" placeholder="Name">
 				    </div>
 				  </div>
 
-					<div class="form-group">
+					<div class="form-group regist-form-padding">
 			    	<label for="inputEmail" class="control-label">Email</label>
 				    <input type="email" name="user[EMAIL]" class="register-form-control" id="inputEmail3" placeholder="Email">
 				  </div>
 
-				  <div class="form-group">
+				  <div class="form-group regist-form-padding">
 				    <label for="inputPassword" class="control-label">Password</label>
 				    <div class="">
 				      <input type="password" name="user[PASSWORD]" class="register-form-control" id="inputPassword3" placeholder="Password">
 				    </div>
 				  </div>
 
-				  <div class="form-group">
+				  <div class="form-group regist-form-padding">
 				    <label for="inputPassword" class="control-label">Comfirm Password</label>
 				    <div class="">
 				      <input type="password" class="register-form-control" id="ComfirmPassword" placeholder="Comfirm Password">
@@ -40,20 +42,25 @@
 				  </div>
 
 				  
-				  <div class="form-group">
+				  <div class="form-group regist-form-padding">
 				    <label for="inputPart" class="control-label">Instrument Part</label>
 				    <div class="">
-				      <input type="text" name ="user[PART]" class="register-form-control" id="inputGanre" placeholder="INSTRUMENT PART">
+				      <select type="text" name ="user[PART]" class="register-form-control" id="inputGanre" placeholder="INSTRUMENT PART">
+				      	<option>Guitar</option>
+				      	<option>Base</option>
+				      	<option>Draum</option>
+				      	<option>Synthesizer</option>
+				      	<option>Bocal</option>
 				    </div>
 				  </div>
 
 
 				  <div class="form-group">
-				    <div class="submit-top">
-				      <button type="submit" class="btn btn-primary">Regist</button>
+				    <div class="submit-top ">
+				      <button type="submit" class="btn regist-button-font regist-button-background">Regist</button>
 				    </div>
 				  </div>
 			  </form>
 			</div>		
-		</div>
+		</form>
 </body>

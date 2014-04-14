@@ -9,9 +9,12 @@ class User < ActiveRecord::Base
   has_many :sources
   has_many :sounds  
 
-  validates :PART,:EMAIL,:PASSWORD,:NAME, :presence => true
+  validates :NAME, :presence => true
+  validates :EMAIL, :uniqueness => true
 
-  def self.latest
-    order(:created_at => :desc)
-  end
+  validates :PASSWORD, :presence => true
+  validates :SALT, :presence => true
+
+  validates :PART, :presence => true
+
 end

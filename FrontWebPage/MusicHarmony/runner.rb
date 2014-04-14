@@ -34,8 +34,7 @@ require './routes/user.rb'
 
 get '/' do
   # erb :harmonyChart
-  # session[:user_id]="NickName"
-
+  # session[:user_id]="1"
   if logged_in?
     erb 'chart/harmonyChart'.to_sym
   else
