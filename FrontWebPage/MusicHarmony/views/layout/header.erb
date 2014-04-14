@@ -7,7 +7,7 @@
           <ul class="list-unstyled list-inline">
             <li>
               <a id="user-nickname" href="/">
-                <h2><%= session[:user_id] %></h2>
+                <h3><%= session[:user_id] %></h3>
               </a>
             </li>
             <li>
@@ -22,16 +22,11 @@
             </li>
           </ul>
         </div>
- <!--        <div id="search-box-form" class="navbar-form" role="search">
-          <input type="search" results="5" name="s" placeholder="Search" autosave="unique">
-          <button type="submit" class="btn btn-success btn-xs"> Go </button>
-        </div> -->
-
         <form class="navbar-form clear" role="search">
           <div class="form-group">
             <input id="search-box" type="search" class="form-control" placeholder="Search" results="5" name="s" autosave="unique">
           </div>
-          <button type="submit" class="btn btn-primary ">Go</button>
+          <button type="submit" id="search-button"class="btn btn-primary glyphicon glyphicon-ok"></button>
         </form>
 
       </div>
@@ -41,12 +36,12 @@
     </div>
   </div>
 </div>
-<div id="topMenu" class="text-center">
+<div id="topMenu" class="text-center menu-area-background">
   <div class="btn-group middleArea">
-    <button onclick="location.href='/harmonyChart'" class="btn menu-btn" id="harmonyChartButton"> Harmony Chart </button>
-    <button onclick="location.href='/artistRanking'" class="btn menu-btn" id="artistRankingButton"> Artist Rank </button>
-    <button onclick="location.href='/myProject'" class="btn menu-btn" id="myProjectButton"> My Project </button>
-    <button onclick="location.href='/timeline'" class="btn menu-btn" id="timelineButton"> Timeline </button>
+    <button onclick="location.href='/harmonyChart'" class="btn menu-btn menu-area-background btn-default" id="harmonyChartButton">Harmony Chart</button>
+    <button onclick="location.href='/artistRanking'" class="btn menu-btn menu-area-background btn-default" id="artistRankingButton">Artist Rank</button>
+    <button onclick="location.href='/myProject'" class="btn menu-btn btn menu-area-background btn-default" id="myProjectButton">My Project</button>
+    <button onclick="location.href='/timeline'" class="btn menu-btn menu-area-background btn-default" id="timelineButton">Timeline</button>
   </div>
 </div>
 <hr class="hr-underBar clear">
