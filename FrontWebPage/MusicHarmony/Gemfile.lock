@@ -1,6 +1,12 @@
 GEM
   remote: http://www.rubygems.org/
   specs:
+    ParseTree (3.0.9)
+      RubyInline (~> 3.9.0)
+      sexp_processor (~> 3.2.0)
+    RubyInline (3.9.0)
+      ZenTest (~> 4.3)
+    ZenTest (4.9.5)
     activemodel (4.0.4)
       activesupport (= 4.0.4)
       builder (~> 3.1.0)
@@ -33,6 +39,12 @@ GEM
     minitest (4.7.5)
     multi_json (1.9.0)
     mysql2 (0.3.15)
+    open4 (1.3.3)
+    php (0.1.1)
+      ParseTree (>= 3.0.4)
+      open4 (>= 1.0.1)
+      ruby_parser (>= 2.0.4)
+      sexp_processor (>= 3.0.3)
     rack (1.5.2)
     rack-protection (1.5.2)
       rack
@@ -40,6 +52,9 @@ GEM
       rack (>= 1.0)
     raindrops (0.13.0)
     rake (10.1.1)
+    ruby_parser (2.3.1)
+      sexp_processor (~> 3.0)
+    sexp_processor (3.2.0)
     shotgun (0.9)
       rack (>= 1.0)
     sinatra (1.4.4)
@@ -76,6 +91,7 @@ DEPENDENCIES
   bcrypt
   carrierwave
   mysql2 (= 0.3.15)
+  php
   rake
   shotgun
   sinatra

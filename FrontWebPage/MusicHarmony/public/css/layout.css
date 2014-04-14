@@ -9,6 +9,15 @@ body{
 .clear{
   clear: both;
 }
+.right{
+  float: right;
+}
+.left{
+  float: left;
+}
+.center{
+  text-align: center;
+}
 .middleArea{
  /*width: 1024px;*/
  /*width: 1400px;*/
@@ -16,7 +25,7 @@ body{
  margin: 0 auto;
 }
 #topBanner-extention{
-  background-color: black;
+  background-color: white;
 }
 #topBanner{
   vertical-align: middle;
@@ -27,7 +36,7 @@ width: 1920px;
 max-width: 100%;
 max-height: 100%;
 /* height: auto; */
-background: url('/img/topBannerImg_normalMode.png') no-repeat center;
+background: url('/img/background/topBannerImg_normalMode.png') no-repeat center;
 background-size: 100% 100%;
 margin: 0 auto;
 }
@@ -41,17 +50,45 @@ margin: 0 auto;
   text-align: center;
 }
 #modeChangeButton{
-  background: url('/img/logo1.png') no-repeat center;
+  background: url('/img/logo/logo.png') no-repeat center;
   border: none;
   cursor: pointer;
   background-size: contain;
   /*padding: 54px;*/
-  /*padding: 80px;*/
+  padding: 80px;
   width: 160px;
   height: 160px;
   /*margin: -112px 0px -25px 0px;*/
-  margin: -90px 0px 0px 0px;
+  margin: -120px 0px 0px 0px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0);
+}
+#user-nickname{
+  color: white;
+  text-decoration: none;
+  /*float: right;*/
+}
+#logout-button{
+  content:url("/img/button/logout-button.png") no-repeat center;
+  background-size: contain;
+  width: 24px;
+  height: auto;
+  float: right;
+}
+#home-button{
+  content:url("/img/button/home-button.png") no-repeat center;
+  background-size: contain;
+  width: 28px;
+  height: auto;
+  float: right;
+}
+#search-box-form{
+  clear: both;
+}
+#search-button{
+  height: 34px;
+  /*width: 32px;*/
+  /*background-image:url("/img/button/check-button.png");*/
+  /*background-repeat:no-repeat;*/
 }
 .menu-btn{
  /*width: 149px;*/
@@ -61,18 +98,38 @@ margin: 0 auto;
  background-color: white;
  padding-top: 5px;
  padding-bottom: 5px;
+ font-size: 18px;
+}
+.menu-area-background{
+  background-color: whitesmoke;
 }
 /* 여기까지 header 부분 ////////////////////////////////////////*/
+.bar-area{
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+#new-upload-bar-img{
+  content:url("/img/background/new-upload-bar.png") no-repeat center;
+  background-size: contain;
+  width: 100%
+}
+.under-bar-line{
+  content:url("/img/background/underbar.png") no-repeat center;
+  margin-top: 50px;
+  width: 100%
+}
+.under-bar-line-shot{
+    width: 100%;
+    height: 3px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
 
 .hr-underBar{
  margin-top: 0px;
  border-top: 1px solid #C6C4C4;
  clear: both;
-}
-
-.hr-underBar-short
-{
- width: 88%;
 }
 
 #recent-text{

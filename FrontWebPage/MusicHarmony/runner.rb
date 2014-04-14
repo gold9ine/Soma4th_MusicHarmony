@@ -5,6 +5,7 @@ require './config/sinatra'
 require './config/carrierwave'
 require './config/database'
 require './config/bcrypt'
+require './config/php'
 
 require './uploaders/image_uploader'
 require './uploaders/sound_uploader'
