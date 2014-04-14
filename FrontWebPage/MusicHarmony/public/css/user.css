@@ -21,7 +21,7 @@
 	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-.music-harmony{
+.login-music-harmony{
 	/*float: left;*/
 	vertical-align: middle;
 	/*display: table-cell;*/
@@ -35,7 +35,7 @@
 
 .login-right
 {
-	position: relative; left: 500px; 
+	text-align: right;
 }
 
 .login-label
@@ -48,4 +48,33 @@
 .login-top
 {
 	padding-top: 80px;
+}
+
+.regist-background
+{
+	background-image:url(/img/regist_background.jpg);
+	padding:5px;
+	width:100%;
+	height:100%;
+	border:1px solid black;
+}
+
+.regist-button-background
+{
+	background-image: -ms-linear-gradient(left, #329389 0%, #7CC086 100%);
+
+/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(left, #329389 0%, #7CC086 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(left, #329389 0%, #7CC086 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #329389), color-stop(1, #7CC086));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(left, #329389 0%, #7CC086 100%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to right, #329389 0%, #7CC086 100%);
 }

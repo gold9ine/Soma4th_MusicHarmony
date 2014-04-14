@@ -29,9 +29,12 @@ require './routes/source.rb'
 require './routes/timeline.rb'
 require './routes/user.rb'
 
+
+
 get '/' do
   # erb :harmonyChart
-  session[:user_id]="NickName"
+  # session[:user_id]="NickName"
+
   if logged_in?
     erb 'chart/harmonyChart'.to_sym
   else

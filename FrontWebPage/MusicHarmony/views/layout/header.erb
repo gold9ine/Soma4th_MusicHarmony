@@ -1,3 +1,4 @@
+
 <% if logged_in? %>
 <div id="topBanner-extention">
   <div id="topBanner" class="normal">
@@ -27,13 +28,15 @@
   </div>
 </div>
 <hr class="hr-underBar clear">
+
 <% else %>
-    <div class="middleArea login-right">
+   <div class="middleArea login-right">
 
       <form class="form-inline login-top" role="form" action="/login" method="post">
+
         <div class="checkbox">
           <label>
-            <input type="checkbox"> Remember me </input>
+            <input type="checkbox" name="remember-me"> Remember me </input>
           </label>
         </div>
 

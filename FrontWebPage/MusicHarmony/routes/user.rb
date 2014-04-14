@@ -31,7 +31,14 @@ post '/login' do
   if @user != nil
     if @user.PASSWORD == BCrypt::Engine.hash_secret(params[:user][:PASSWORD], @user.SALT)
       session[:user_id] = @user.id
+      
+      if params["remember-me"] == "on"
+
+        cookies[:user_id] = @user.id
+      end
+
       redirect "/"
+
     else
       #raise "login fail!"
       erb 'layout/error'.to_sym
@@ -44,11 +51,13 @@ end
 
 delete '/logout' do
   session[:user_id] = nil
+  cookies[:user_id] = nil
 
   redirect '/'
 end
 
 get '/user' do
   session[:user_id] = nil
+  cookies[:user_id] = nil
 	erb 'user/form'.to_sym
 end
