@@ -8,8 +8,8 @@ post '/new_comment/:id' do
 
   @comments = Comment.all
   @sources = Source.all
-
-  erb 'project/projectInfo'.to_sym
+  #raise @comment.PROJECT_NUM.inspect
+  redirect back
 end
 
 get '/delete_comment/:project_id/:comment_id' do
@@ -20,5 +20,5 @@ get '/delete_comment/:project_id/:comment_id' do
   @comments = Comment.all
   @sources = Source.all
 
-  erb 'project/projectInfo'.to_sym
+  redirect back
 end
