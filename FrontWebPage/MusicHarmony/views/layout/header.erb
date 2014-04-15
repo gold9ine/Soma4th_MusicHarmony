@@ -7,8 +7,13 @@
           <div id="banner-user-area" class="navbar-form pannel-heading">
             <ul class="list-unstyled list-inline">
               <li>
-                <a id="user-nickname" href="/">
-                  <h3><%= session[:user_id] %></h3>
+                <a id="user-nickname" href="/user_info">
+                  <h3 class="tilt"><%= session[:user_nick_name] %></h3>
+                </a>
+              </li>
+             <li>
+                <a href="/user_edit" TITLE="Edit">
+                  <img id="edit-button"></img>
                 </a>
               </li>
               <li>
@@ -32,7 +37,7 @@
 
         </div>
         <div id="modeChange-area">
-          <img id="modeChangeButton"></img>
+          <img id="modeChangeButton" class="morph" TITLE="Mode Change"></img>
         </div>
       </div>
     </div>
@@ -41,7 +46,7 @@
     <div class="btn-group middleArea">
       <button onclick="location.href='/harmonyChart'" class="btn menu-btn menu-area-background btn-default" id="harmonyChartButton">Harmony Chart</button>
       <button onclick="location.href='/artistRanking'" class="btn menu-btn menu-area-background btn-default" id="artistRankingButton">Artist Rank</button>
-      <button onclick="location.href='/myProject'" class="btn menu-btn btn menu-area-background btn-default" id="myProjectButton">My Project</button>
+      <button onclick="location.href='/my_project'" class="btn menu-btn btn menu-area-background btn-default" id="myProjectButton">My Project</button>
       <button onclick="location.href='/timeline'" class="btn menu-btn menu-area-background btn-default" id="timelineButton">Timeline</button>
     </div>
   </div>

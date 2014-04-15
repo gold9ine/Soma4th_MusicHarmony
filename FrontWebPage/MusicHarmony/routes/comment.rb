@@ -3,6 +3,7 @@ post '/new_comment/:id' do
   @comment = Comment.new
   @comment.CONTENTS = params[:comment][:CONTENTS]
   @comment.PROJECT_NUM = params[:id]
+  @comment.PRI_USER_ID = session[:user_id]
   @comment.save!
 
   @comments = Comment.all
