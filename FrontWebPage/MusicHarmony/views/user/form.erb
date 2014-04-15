@@ -1,8 +1,18 @@
 
 <body class="regist-background">
 
+		<script>
+	  	function registcheck(formEI)
+	  	{
+	  		if(formEI.password.value != formEI.comfirm-password.value);
+	  		{
+	  			alert("aaaaa");
+	  		}
+	  	}
+	  </script>
+
 		<form class="regist-height">
-			<div 
+			
 			<div class="col-xs-12 col-sm-6 col-md-6 regist-padding">
 				<form class="form-horizontal" role="form" name="register-form">
 					<img src="/img/logo2.png" class="login-music-harmony"/>
@@ -10,7 +20,9 @@
 			</div>
 
 			<div class="col-xs-6 col-md-6 regist-padding">
-				<form class="form-horizontal" id="register-form" name="register-form" role="form" name="register-form" action="/regist" method="post">
+				
+				<form class="form-horizontal" onsubmit="return registcheck(this)" id="register-form" name="register-form" role="form" name="register-form" action="/regist" method="post">
+					
 					<div class="form-group regist-form-padding">
 						<h4 >Register</h4>
 					</div>
@@ -30,14 +42,14 @@
 				  <div class="form-group regist-form-padding">
 				    <label for="inputPassword" class="control-label">Password</label>
 				    <div class="">
-				      <input type="password" name="user[PASSWORD]" class="register-form-control" id="inputPassword3" placeholder="Password">
+				      <input type="password" id="password" name="user[PASSWORD]" class="register-form-control" placeholder="Password">
 				    </div>
 				  </div>
 
 				  <div class="form-group regist-form-padding">
 				    <label for="inputPassword" class="control-label">Comfirm Password</label>
 				    <div class="">
-				      <input type="password" class="register-form-control" id="ComfirmPassword" placeholder="Comfirm Password">
+				      <input type="password" class="register-form-control" id="comfirm-password" placeholder="Comfirm Password">
 				    </div>
 				  </div>
 
@@ -62,6 +74,9 @@
 				    </div>
 				  </div>
 			  </form>
+
+
+
 			</div>		
 		</form>
 </body>
