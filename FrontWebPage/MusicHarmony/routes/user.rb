@@ -40,21 +40,20 @@ post '/login' do
 
   if @user != nil
     if @user.PASSWORD == BCrypt::Engine.hash_secret(params[:user][:PASSWORD], @user.SALT)
-      session[:user_id] = @user.id
-      
       if params["remember-me"] == "on" 
-
         cookies[:user_id] = @user.id
       end
-
+      session[:user_id] = @user.id
       redirect "/"
-
+    
     else
       #raise "login fail!"
-      erb 'layout/error'.to_sym
+      session[:login_fail] = "1";
+      redirect "/user"
     end
   else
-    erb 'layout/error'.to_sym
+    session[:login_fail] = "1";
+    redirect "/user"
   end
 
 end
