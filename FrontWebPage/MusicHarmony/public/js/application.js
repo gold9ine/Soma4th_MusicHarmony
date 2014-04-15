@@ -1,23 +1,24 @@
 $(function(){                              
-  $("img#modeChangeButton").on('click', function(){
-      var containerArea = $('#container');
+  $("img#modeChangeButton").on('click', function(event){
+      event.preventDefault();
 
+      var containerArea = $('#container');
       if(containerArea.hasClass('normal'))
-      {
+      {console.log("change detail");
         containerArea.removeClass('normal');
         containerArea.addClass('detail');
       }
       else
-      {
+      {console.log("change normal");
         containerArea.removeClass('detail');
         containerArea.addClass('normal');
       }
   });
 
-  $("button#project-delete-btn").on('click', function(){
-      console.log("ddd");
-      $("#content").load("/myProject");
-  });
+  // $("button#project-delete-btn").on('click', function(){
+  //     console.log("ddd");
+  //     $("#content").load("/myProject");
+  // });
 
 
   $(document).on("submit", "#register-form", function(event){
