@@ -17,6 +17,7 @@ post '/regist' do
   # redirect '/'
   
   if @user.save
+    session[:user_id] = @user.id
     cookies[:user_id] = @user.id
     {:status => 'success', :redirect_to => '/'}.to_json
   else
@@ -28,8 +29,6 @@ post '/regist' do
       session[:error_PART] = 1;
     end
       
-      
-
     form = erb('user/form'.to_sym, :layout => false)
     {:status => 'failure', :form => form}.to_json
   end
