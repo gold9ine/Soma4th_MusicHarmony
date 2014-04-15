@@ -45,7 +45,9 @@
 
 .login-checkbox
 {
-	padding-right: 450px;
+	padding-bottom: 5px;
+	position:relative;left: -485px;
+
 }
 
 .login-label
