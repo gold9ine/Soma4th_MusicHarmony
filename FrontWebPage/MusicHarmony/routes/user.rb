@@ -19,7 +19,6 @@ post '/regist' do
   unless params[:user][:COMFIRM] == params[:user][:PASSWORD]
     form = erb('user/form'.to_sym, :layout => false)
     {:status => 'failure', :form => form}.to_json
-    puts "sucess"
   end
 
   if @user.save
