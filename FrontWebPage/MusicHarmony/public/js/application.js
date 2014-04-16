@@ -1,21 +1,52 @@
 $(function(){                              
-    $("img#modeChangeButton").on('click', function(){
-        var containerArea = $('#container');
+  $("img#modeChangeButton").on('click', function(event){
+      event.preventDefault();
 
-        if(containerArea.hasClass('normal'))
+      var containerArea = $('#container');
+      if(containerArea.hasClass('normal'))
+      {console.log("change detail");
+        containerArea.removeClass('normal');
+        containerArea.addClass('detail');
+      }
+      else
+      {console.log("change normal");
+        containerArea.removeClass('detail');
+        containerArea.addClass('normal');
+      }
+  });
+
+  // $("button#project-delete-btn").on('click', function(){
+  //     console.log("ddd");
+  //     $("#content").load("/myProject");
+  // });
+
+
+  $(document).on("submit", "#register-form", function(event){
+    event.preventDefault();
+
+    var url = $(this).attr("action");
+    var form = $(this);
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: $(this).serialize(),
+      success: function(data, status){
+        var result = $.parseJSON(data);
+
+        if(result.status == "success")
         {
-          containerArea.removeClass('normal');
-          containerArea.addClass('detail');
+          window.location.href = result.redirect_to;
         }
         else
         {
-          containerArea.removeClass('detail');
-          containerArea.addClass('normal');
+          var newForm = $(result.form).find("#register-form");
+          $('#register-form').replaceWith(newForm);
         }
+      },
+      error: function(data, status){
+        // error
+      }
     });
-
-    $("button#project-delete-btn").on('click', function(){
-        console.log("ddd");
-        $("#content").load("/myProject");
-    });
+  });
 });

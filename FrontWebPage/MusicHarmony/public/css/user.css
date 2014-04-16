@@ -21,31 +21,120 @@
 	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
-.music-harmony{
+.login-music-harmony{
 	/*float: left;*/
 	vertical-align: middle;
 	/*display: table-cell;*/
 	height: 100%;
 	/*background-color: #333;*/
 	width: 100%;
-	background:  url('/img/logo2.png') no-repeat center;
+	background:  url('/img/logo/logo2.png') no-repeat center;
 	background-size: 100% 100%;
 	margin: 0 auto;
 }
 
+.login-remember
+{
+	color: white;
+}
+
 .login-right
 {
-	position: relative; left: 500px; 
+	text-align: right;
+}
+
+.login-checkbox
+{
+	padding-bottom: 5px;
+	position:relative;left: -485px;
+
 }
 
 .login-label
 {
 	margin-right: 10px;
 	margin-bottom: 0px;
-	font-size: 12px;
+	font-size: 18px;
 }
 
-.login-top
+.login-padding
 {
+
 	padding-top: 80px;
+}
+
+.regist-background
+{
+	background-image:url(/img/background/regist-backgroundimg.png);
+	padding:5px;
+	width:100%;
+	height:100%;
+	border:1px solid black;
+}
+
+.regist-button-background
+{
+	background-image: -ms-linear-gradient(left, #329389 0%, #7CC086 100%);
+
+/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(left, #329389 0%, #7CC086 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(left, #329389 0%, #7CC086 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #329389), color-stop(1, #7CC086));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(left, #329389 0%, #7CC086 100%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to right, #329389 0%, #7CC086 100%);
+}
+
+.regist-button-font
+{
+
+	text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
+	color: #fff;
+	font-size: 16px;
+}
+
+.regist-form-padding
+{
+	margin-bottom: 0px
+	margin-top: 0px;
+}
+
+.regist-textbox
+{
+	fint-size: 18px;
+}
+
+
+.regist-height
+{
+	padding-top: 50px;
+	height: 500px;
+}
+
+.regist-back
+{
+	background-color: white;
+	margin-top: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.login-form
+{
+	margin-right: 100px;
+}
+
+.checkbox-font
+{
+	font-size: 15px;
+	color: white;
 }

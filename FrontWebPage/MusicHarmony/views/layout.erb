@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <div id="container">
+  <div id="container" class="normal">
     <% if flash[:notice]  %>
       <div class="alert alert-error">
         <p class="text-danger"><%= flash[:notice] %></p>
@@ -17,6 +17,7 @@
       <%= erb 'layout/header'.to_sym %>
     </div>
 
+    
     <div id="content" class="middleArea">
       <%= yield %>
     </div>

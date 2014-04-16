@@ -10,3 +10,4 @@ moc_*.*
 Makefile
 *.a
 development.sqlite3
+FrontWebPage/MusicHarmony/public/uploads/

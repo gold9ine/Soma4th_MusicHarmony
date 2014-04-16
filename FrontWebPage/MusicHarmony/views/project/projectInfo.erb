@@ -54,14 +54,14 @@
   <br>
   <div id="project-sources">
     <% @sources.each do |source| %>
-    <% if source.PROJECT_NUM == @project.id %>
-    <div class="source">
-      <embed class="source-player-area" src="<%= source.SOURCE_PATH_url %>"/>
-    </div>
-    <div>
-      <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_source/<%= @project.id %>/<%= source.id %>"> delete </a>
-    </div>
-      <hr>
+      <% if source.PROJECT_NUM == @project.id %>
+        <div class="source">
+          <embed class="source-player-area" src="<%= source.SOURCE_PATH_url %>"/>
+        </div>
+        <div>
+          <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_source/<%= @project.id %>/<%= source.id %>"> delete </a>
+        </div>
+        <hr>
       <% end %>
       <% end %>
   </div>
@@ -77,18 +77,19 @@
   <hr>
   <div id="project-replies">
     <% @comments.each do |comment| %>
-    <% if comment.PROJECT_NUM == @project.id %>
-    <div class="comment">
-     <%= comment.CONTENTS %>
-   </div>
-   <div>
-     <p class="pull-left"><small> <%= comment.created_at %></small> </p>
-     <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_comment/<%= @project.id %>/<%= comment.id %>"> delete </a>
-   </div>
-    <div class="center">
-      <img class="under-bar-line under-bar-line-shot"></img>
-    </div>
-   <% end %>
+      <div class="">
+        <%= User.find_by_id(comment.PRI_USER_ID.inspect).NAME %>
+      </div>
+      <div class="comment">
+       <%= comment.CONTENTS %>
+      </div>
+      <div>
+       <p class="pull-left"><small> <%= comment.created_at %></small> </p>
+       <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_comment/<%= @project.id %>/<%= comment.id %>"> delete </a>
+      </div>
+      <div class="center">
+        <img class="under-bar-line under-bar-line-shot"></img>
+      </div>
    <% end %>
   </div>
 </div>

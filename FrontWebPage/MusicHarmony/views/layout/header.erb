@@ -1,76 +1,85 @@
-<% if logged_in? %>
-<div id="topBanner-extention">
-  <div id="topBanner" class="normal">
-    <div class="middleArea">
-      <div id="banner-user-search-area">
-        <div id="banner-user-area" class="navbar-form pannel-heading">
-          <ul class="list-unstyled list-inline">
-            <li>
-              <a id="user-nickname" href="/">
-                <h3><%= session[:user_id] %></h3>
-              </a>
-            </li>
-            <li>
-              <a href="/user" TITLE="Log out">
-                <img id="logout-button"></img>
-              </a>
-            </li>
-            <li>
-              <a href="/" TITLE="Home">
-                <img id="home-button"></img>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <form class="navbar-form clear" role="search">
-          <div class="form-group">
-            <input id="search-box" type="search" class="form-control" placeholder="Search" results="5" name="s" autosave="unique">
-          </div>
-          <button type="submit" id="search-button"class="btn btn-primary glyphicon glyphicon-ok"></button>
-        </form>
 
-      </div>
-      <div id="modeChange-area">
-        <img id="modeChangeButton"></img>
+<% if logged_in? %>
+  <div id="topBanner-extention">
+    <div id="topBanner" class="normal">
+      <div class="middleArea">
+        <div id="banner-user-search-area">
+          <div id="banner-user-area" class="navbar-form pannel-heading">
+            <ul class="list-unstyled list-inline">
+              <li>
+                <a id="user-nickname" href="/user_info">
+                  <h3 class="tilt"><%= session[:user_nick_name] %></h3>
+                </a>
+              </li>
+             <li>
+                <a href="/user_edit" TITLE="Edit">
+                  <img id="edit-button"></img>
+                </a>
+              </li>
+              <li>
+                <a href="/logout" value="delete" TITLE="Log out">
+                  <img id="logout-button"></img>
+                </a>
+              </li>
+              <li>
+                <a href="/" TITLE="Home">
+                  <img id="home-button"></img>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <form class="navbar-form clear" role="search">
+            <div class="form-group">
+              <input id="search-box" type="search" class="form-control" placeholder="Search" results="5" name="s" autosave="unique">
+            </div>
+            <button type="submit" id="search-button"class="btn btn-primary glyphicon glyphicon-ok"></button>
+          </form>
+
+        </div>
+        <div id="modeChange-area">
+          <img id="modeChangeButton" class="morph" TITLE="Mode Change"></img>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div id="topMenu" class="text-center menu-area-background">
-  <div class="btn-group middleArea">
-    <button onclick="location.href='/harmonyChart'" class="btn menu-btn menu-area-background btn-default" id="harmonyChartButton">Harmony Chart</button>
-    <button onclick="location.href='/artistRanking'" class="btn menu-btn menu-area-background btn-default" id="artistRankingButton">Artist Rank</button>
-    <button onclick="location.href='/myProject'" class="btn menu-btn btn menu-area-background btn-default" id="myProjectButton">My Project</button>
-    <button onclick="location.href='/timeline'" class="btn menu-btn menu-area-background btn-default" id="timelineButton">Timeline</button>
+  <div id="topMenu" class="text-center menu-area-background">
+    <div class="btn-group middleArea">
+      <button onclick="location.href='/harmonyChart'" class="btn menu-btn menu-area-background btn-default" id="harmonyChartButton">Harmony Chart</button>
+      <button onclick="location.href='/artistRanking'" class="btn menu-btn menu-area-background btn-default" id="artistRankingButton">Artist Rank</button>
+      <button onclick="location.href='/my_project'" class="btn menu-btn btn menu-area-background btn-default" id="myProjectButton">My Project</button>
+      <button onclick="location.href='/timeline'" class="btn menu-btn menu-area-background btn-default" id="timelineButton">Timeline</button>
+    </div>
   </div>
-</div>
-<hr class="hr-underBar clear">
+  <hr class="hr-underBar clear">
+
 <% else %>
-    <div class="middleArea login-right">
+   <div class="middleArea login-right">
 
-      <form class="form-inline login-top" role="form" action="/login" method="post">
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Remember me </input>
-          </label>
+      <form class="form-inline login-padding" role="form" action="/login" method="post">
+
+        <div class="form-group login-form">
+          <div class="checkbox login-checkbox">
+            <label class="checkbox-font">
+              <input type="checkbox" class="login-remember" name="remember-me"> Remember me </input>
+            </label>
+          </div>
+          <br>
+
+          <div class="form-group" >
+            <label class="sr-only login-label" for="InputEmail">Email address</label>
+            <input type="email" class="form-control login-label" name="user[EMAIL]" id="InputEmail" placeholder="Enter email">
+          </div>
+          
+          <div class="form-group">
+            <label class="sr-only" for="InputPassword" >Password</label>
+            <input type="password" class="form-control login-label" name="user[PASSWORD]" id="InputPassword" placeholder="Password">
+          </div>
+
+         <button type="submit" class="btn btn-warning" name="signin">Sign in</button>
+         
         </div>
-
-        <br>
-
-        <div class="form-group" >
-          <label class="sr-only login-label" for="InputEmail">Email address</label>
-          <input type="email" class="form-control login-label" name="user[EMAIL]" id="InputEmail" placeholder="Enter email">
-        </div>
-        
-        <div class="form-group">
-          <label class="sr-only" for="InputPassword" >Password</label>
-          <input type="password" class="form-control login-label" name="user[PASSWORD]" id="InputPassword" placeholder="Password">
-        </div>
-
-        <button type="submit" class="btn btn-warning">Sign in</button>
-
+    </div>
   </div>
-</div>
 
 <% end %>
 
