@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20140325045650) do
 
+  create_table "ajax_example", primary_key: "name", force: true do |t|
+    t.integer "age",           null: false
+    t.string  "sex", limit: 1, null: false
+    t.integer "wpm",           null: false
+  end
+
   create_table "comments", force: true do |t|
     t.integer  "PROJECT_NUM"
     t.datetime "created_at"
