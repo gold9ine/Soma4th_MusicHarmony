@@ -1,6 +1,6 @@
 @import "bootstrap/bootstrap.less";
 
-body {
+/*body {
   padding-top: 60px;
 }
 
@@ -10,7 +10,7 @@ body {
   font-style: normal;
   font-weight: 400;
   src: local('Cookie-Regular'), url('../Cookie.woff') format('woff');
-}
+}*/
 
 /**
  * Primary CSS for Audiee
@@ -33,20 +33,19 @@ body {
 @trackHeight:     120px;
 @infoWidth:       @trackHeight;
 @infoHeight:      @trackHeight;
-@timelineHeight:  30px;
-@menubarHeight:   36px;
+@timelineHeight:  70px;
+@menubarHeight:   3em;
 @editorOffset:    100px;
 
 
 // styles for the top navbar
-.navbar {
-  height: 40px;
-  
+.navbar-less {
+  height: 4em;
   margin-bottom: 0px;
-  min-height: 41px;
-  
+  /*min-height: 41px;*/
+
   .navbar-inner {
-    height: 40px;
+    height: 4em;
   }
 
   .container-fluid {
@@ -60,7 +59,7 @@ body {
     padding-top: 10px;
     color: @orange;
     font-family: 'Cookie', serif;
-    font-size: 24px;
+    font-size: 2em;
     text-shadow: 0 2px 4px @black;
   }
 
@@ -89,9 +88,10 @@ body {
 
     #time-display {
       width: 100px;
+      height: 2em;
       text-align: right;
-      margin: 5px 6px 0 0;
-      font-size: 18px;
+      margin: 0 auto;
+      font-size: 1em;
       cursor: default;
       .noTextSelection;
     }
@@ -124,9 +124,9 @@ body {
 // styles for the main editor view
 #editor-view { 
   position: relative;
-  overflow: scroll;
+  overflow: auto;
   /*margin-top: @editorOffset;*/
-  background-color: @gray;
+  background-color: #ccc;
   .noTextSelection;
 
   .inner {
@@ -349,6 +349,26 @@ body {
     float: right;
     font-size: 0.85em;
   }  
+  #playback-controls {
+    width: 290px;
+    min-width: 290px;
+    margin: 1px 60% 0 30%;
+    .noTextSelection;
+
+    .playing {
+      .buttonBackground(lighten(@orange, 30%), lighten(@orange, 15%));      
+    }
+
+    #time-display {
+      width: 100px;
+      height: 2em;
+      text-align: right;
+      margin: 0 auto;
+      font-size: 1em;
+      cursor: default;
+      .noTextSelection;
+    }
+  }
 }
 //@media (min-width: 980px) {
 @media (min-width: 480px) {

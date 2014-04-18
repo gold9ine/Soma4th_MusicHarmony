@@ -36,8 +36,8 @@ get '/' do
   # erb :harmonyChart
   # session[:user_id]="1"
   if logged_in?
-    @user=User.find_by_id(session[:user_id])
-    session[:user_nick_name]=@user.NAME
+    @user = User.find_by_id(session[:user_id])
+    # session[:user_nick_name] = @user.NAME
     # @new_project = Project.new 
     @project = Project.all 
     @Project_Carousel = Project.limit(36)
@@ -48,4 +48,8 @@ get '/' do
   else
     redirect '/user'
   end
+end
+
+get '/audiee' do
+  erb 'audiee/audiee3'.to_sym
 end
