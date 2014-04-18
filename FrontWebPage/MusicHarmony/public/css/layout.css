@@ -28,8 +28,11 @@ body{
 .middleAreaFullWidth{
  /*width: 1024px;*/
  /*width: 1400px;*/
- width: 100%;
+ width: 98%;
  margin: 0 auto;
+}
+#content{
+  margin: 0 auto;
 }
 #topBanner-extention{
   background-color: white;
