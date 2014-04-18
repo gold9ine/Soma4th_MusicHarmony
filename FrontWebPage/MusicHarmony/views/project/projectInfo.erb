@@ -48,49 +48,85 @@
         <div class="source">
           <embed class="source-player-area" src="<%= source.SOURCE_PATH_url %>"/>
         </div>
-        <div>
-          <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_source/<%= @project.id %>/<%= source.id %>"> delete </a>
-        </div>
+        <% if session[user_id] == source.PRI_USER_ID %>
+          <div>
+            <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_source/<%= @project.id %>/<%= source.id %>"> delete </a>
+          </div>
+        <% end %>
         <hr>
       <% end %>
-      <% end %>
+    <% end %>
   </div>
 </div>
 
 <legend>Comment & TimeLine</legend>
-<div id="project-replies">
+<div id="project-comments">
   <div class="col-md-12">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <% @comments.each do |comment| %>
-          <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_comment/<%= @project.id %>/<%= comment.id %>"> delete </a>
+    <% @comments.each do |comment| %>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <ul class="menu right list-unstyled list-inline">
+            <% if session[:user_id] == comment.PRI_USER_ID %>
+              <li>
+                <a class="btn btn-danger btn-sm pull-right" role="button" href="/delete_comment/<%= @project.id %>/<%= comment.id %>"> delete </a>
+              </li>
+            <% else %>
+              <li>
+                <a class="btn btn-success btn-xs pull-right" role="button" href="/good_reply/<%= comment.id %>"> Good! </a>
+              </li>
+            <% end %>
+          </ul>
+  
           <div>
-           <p class=""> <%= comment.created_at.inspect.slice!(0 .. 9) %></p>
+            <p class=""> <%= comment.created_at.inspect.slice!(0 .. 9) %></p>
           </div>
+  
           <div class="">
             poster : <%= User.find_by_id(comment.PRI_USER_ID.inspect).NAME %>
           </div>
 
           <div class="comment">
-           <%= comment.CONTENTS %>
+            <%= comment.CONTENTS %>
           </div>
+        </div>
+
+        <ul class="reply list-group-item">
+          <% @replies.each do |reply| %>
+            <% if reply.COMMENT_NUM == comment.id %>
+              <% if session[:user_id] == reply.PRI_USER_ID %>
+                <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_reply/<%= comment.id %>"> delete </a>
+              <% end %>
+              <p><%= reply.CONTENTS %></p>
+              
+              <div>
+
+              </div>
+              <hr style="margin-top:0px; margin-bottom:0px">
+            <% end %>
+          <% end%>
           
-          
-        <% end %>
+          <form id="replise-list" class="form-horizontal" action="/new_reply/<%= @project.id %>/<%= comment.id %>" method="post" >
+            <div class="form-group">
+              <div class="col-sm-11">
+                <input type="text" class="form-control" id="input-reply" placeholder="reply" name="reply[CONTENTS]">
+
+              </div>
+              <div class="col-sm-1" type="padding-top: 10px;">
+                <button type="submit" class="btn btn-primary btn-xs reply-position">submit</button>
+
+              </div>
+            </div>
+          </form>
+        </ul>
       </div>
-
-      <div class="panel-body">
-        <h5> reply <h5>
-    </div>
+    <% end %>
   </div>
-
+</div>
 <div class="bs-example">
   <form id="project-comment-list" class="has-success form-inline" action="/new_comment/<%= @project.id %>" method="post" enctype="multipart/form-data">
       <input type="text" class="form-control" id="input-comment" placeholder="comment" name="comment[CONTENTS]">
       <button type="submit" class="btn btn-primary btn-xs">submit</button>
   </form>
-
-  
 </div>
 
 

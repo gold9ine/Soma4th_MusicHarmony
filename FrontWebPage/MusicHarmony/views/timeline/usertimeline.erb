@@ -1,0 +1,62 @@
+  <div class="bs-example">
+    <legend>Comment & TimeLine</legend>
+    <div id="project-comments">
+      <div class="col-md-12">
+      <!-- <%# @comments.each do |comment| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <ul class="menu right list-unstyled list-inline">
+              <%# if session[:user_id] == comment.PRI_USER_ID %>
+                
+              <#% else %>
+                
+              <#% end %>
+            </ul>
+    
+            <div>
+              <p class=""> <%#= comment.created_at.inspect.slice!(0 .. 9) %></p>
+            </div>
+    
+            <div class="">
+              poster : <%#= User.find_by_id(comment.PRI_USER_ID.inspect).NAME %>
+            </div>
+
+            <div class="comment">
+              <%#= comment.CONTENTS %>
+            </div>
+          </div>
+
+          <ul class="reply list-group-item">
+            <%# @replies.each do |reply| %>
+              <%# if reply.COMMENT_NUM == comment.id %>
+                <%# if session[:user_id] == reply.PRI_USER_ID %>
+                  <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_reply/<%#= comment.id %>"> delete </a>
+                <%# end %>
+                <p><%#= reply.CONTENTS %></p>
+                
+                <div>
+
+                </div>
+                <hr style="margin-top:0px; margin-bottom:0px">
+               <%# end %>
+              <%# end%>
+            
+              <form id="replise-list" class="form-horizontal" action="/new_reply/<%#= @project.id %>/<%#= comment.id %>" method="post" >
+                <div class="form-group">
+                  <div class="col-sm-11">
+                    <input type="text" class="form-control" id="input-reply" placeholder="reply" name="reply[CONTENTS]">
+
+              </div>
+              <div class="col-sm-1" type="padding-top: 10px;">
+                <button type="submit" class="btn btn-primary btn-xs reply-position">submit</button>
+
+              </div>
+            </div>
+          </form>
+        </ul>
+      </div>
+    <% #end %> -->
+  </div>
+</div>
+
+

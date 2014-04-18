@@ -6,6 +6,8 @@ class Comment < ActiveRecord::Base
 
   validates :CONTENTS, :presence => true
 
+  has_many :replies
+
   def self.latest
     order(:created_at => :desc)
   end

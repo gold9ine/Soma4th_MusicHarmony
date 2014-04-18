@@ -6,12 +6,12 @@ function registcheck(formEI)
 		alert("Password Error");
 	}
 	
-	if (formEI.email.value != "")
+	if (formEI.email.value == "")
 	{
 		alert("Email Error");
 	}
 	
-	if(formEI.name.value != "")
+	if(formEI.name.value == "")
 	{
 		alert("Name Error");
 	}

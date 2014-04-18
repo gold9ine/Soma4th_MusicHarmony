@@ -15,10 +15,21 @@ end
 get '/delete_comment/:project_id/:comment_id' do
   @comment = Comment.find(params[:comment_id])
   @comment.destroy
-  
   @project = Project.find(params[:project_id])
   @comments = Comment.all
   @sources = Source.all
 
   redirect back
+end
+
+post '/new_reply/:project_id/:comment_id' do
+  @reply = Reply.new
+  @reply.COMMENT_NUM = params[:comment_id]
+  @reply.PRI_USER_ID = session[:user_id]
+  @reply.CONTENTS = params[:reply][:CONTENTS]
+  
+  if @reply.save
+    redirect back
+  else
+  end
 end

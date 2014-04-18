@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140325045650) do
 
   create_table "replies", force: true do |t|
     t.integer  "SOURCE_NUM"
+    t.integer  "COMMENT_NUM"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "PRI_USER_ID"

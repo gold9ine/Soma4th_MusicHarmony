@@ -1,4 +1,4 @@
 get '/timeline' do
   # erb :timeline
-  erb 'timeline/timeline'.to_sym
+  erb 'timeline/usertimeline'.to_sym
 end

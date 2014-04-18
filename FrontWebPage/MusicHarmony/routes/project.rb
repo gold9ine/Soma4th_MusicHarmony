@@ -36,6 +36,7 @@ get '/project/:id' do
   @project = Project.find(params[:id])
   @sources = Source.find_all_by_PROJECT_NUM(@project.id)
   @comments = Comment.find_all_by_PROJECT_NUM(@project.id)
+  @replies = Reply.all
 
   erb 'project/projectInfo'.to_sym
 end
