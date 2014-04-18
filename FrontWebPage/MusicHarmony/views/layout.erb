@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Music Harmoney</title>
-<%= erb "layout/file_include".to_sym%>
+  <meta charset="utf-8">
+  <title>Music Harmoney</title>
+  <link rel="stylesheet/less" href="/audiee/less/style3.css">
+  <script src="/audiee/js/libs/less-1.2.2.js"></script>
+  <link rel="stylesheet" href="/css/layout.css">
+
+
+  <%= erb "layout/file_include".to_sym%>
 </head>
 
 <body>
-  <div id="container">
+  <div id="container" class="normal">
     <% if flash[:notice]  %>
       <div class="alert alert-error">
         <p class="text-danger"><%= flash[:notice] %></p>
@@ -17,6 +23,7 @@
       <%= erb 'layout/header'.to_sym %>
     </div>
 
+    
     <div id="content" class="middleArea">
       <%= yield %>
     </div>

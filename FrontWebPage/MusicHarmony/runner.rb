@@ -36,9 +36,20 @@ get '/' do
   # erb :harmonyChart
   # session[:user_id]="1"
   if logged_in?
+    @user = User.find_by_id(session[:user_id])
+    # session[:user_nick_name] = @user.NAME
+    # @new_project = Project.new 
+    @project = Project.all 
+    @Project_Carousel = Project.limit(36)
+    # puts session[:user_nick_name].inspect
+    # raise.Project_Carousel.inspect
+    # session[:user_nick_name].to_yaml
     erb 'chart/harmonyChart'.to_sym
   else
     redirect '/user'
   end
-  
+end
+
+get '/audiee' do
+  erb 'audiee/audiee3'.to_sym
 end

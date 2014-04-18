@@ -1,7 +1,13 @@
-<!-- <div id="recent-text">
-Recent
-</div>
-<hr class="hr-underBar hr-underBar-short"> -->
+<% @count=1 %>
+<% @imgSrc = Array.new(36)%>
+<% @imgId = Array.new(36)%>
+<%for value in @Project_Carousel %>
+    <% @imgSrc[@count]=value.ALBUM_IMAGE_PATH_url%>
+    <% @imgId[@count]=value.id%>
+    <% @count=@count+1 %>
+ <%end%>
+<% @count=1 %>
+
 <div class="bar-area">
   <img id="new-upload-bar-img"></img>
 </div>
@@ -16,207 +22,36 @@ Recent
   <div class="carousel-inner">
     <div class="active item">
       <!-- <h2>Slide 1</h2> -->
-      <div class="row">
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage1.png/" alt="...">
-          </a>
+      <% for i in 1..2 %>
+        <div class="row">
+          <% for i in 1..6 %>
+          <div class="col-xs-6 col-md-2">
+            <a href="/project/<%= @imgId[@count] %>" class="thumbnail albumImg-a-thumbnail">
+              <img class="img-circle" src="<%= @imgSrc[@count] %>" alt="...">
+              <% @count=@count+1 %>
+            </a>
+          </div>
+          <% end %>
         </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage2.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage3.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage4.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage9.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage10.png" alt="...">
-          </a>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img>
-            <img class="img-circle" src="/img/album/albumimage5.png/" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage6.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage7.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage8.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage11.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage12.png" alt="...">
-          </a>
-        </div>
-      </div>
+      <% end %>
     </div>
-    <div class="item">
-      <div class="row">
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage13.png/" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage14.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage15.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage16.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage17.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage18.png" alt="...">
-          </a>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage19.png/" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage20.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage21.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage22.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage23.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage24.png" alt="...">
-          </a>
-        </div>
+    <% for i in 1..2 %>
+      <div class="item">
+        <% for i in 1..2 %>
+          <div class="row">
+            <% for i in 1..6 %>
+            <div class="col-xs-6 col-md-2">
+              <a href="/project/<%= @imgId[@count] %>" class="thumbnail albumImg-a-thumbnail">
+                <img class="img-circle" src="<%= @imgSrc[@count] %>" alt="...">
+                <% @count=@count+1 %>
+              </a>
+            </div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
-    </div>
-    <div class="item">
-      <div class="row">
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage25.png/" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage3.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage6.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage9.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage12.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage15.png" alt="...">
-          </a>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage18.png/" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage24.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage2.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage5.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage10.png" alt="...">
-          </a>
-        </div>
-        <div class="col-xs-6 col-md-2">
-          <a href="#" class="thumbnail albumImg-a-thumbnail">
-            <img class="img-circle" src="/img/album/albumimage17.png" alt="...">
-          </a>
-        </div>
-      </div>
-    </div>
+    <% end %>
   </div>
   <!-- Carousel nav -->
   <a class="carousel-control left carousel-side-width" href="#myCarousel" data-slide="prev">
@@ -230,4 +65,8 @@ Recent
   <img class="under-bar-line"></img>
 </div>
 
+
+
+
+ 
 

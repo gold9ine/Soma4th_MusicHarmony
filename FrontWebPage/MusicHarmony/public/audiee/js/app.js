@@ -88,10 +88,11 @@ define(function(require) {
 			
 			// for IE and Firefox prior to version 4
 			if (e) 
-		    	e.returnValue = 'By leaving this page, all changes will be lost.';
+		    	//e.returnValue = 'By leaving this page, all changes will be lost.';
 		  	
 			// for Chrome, Safari and Opera 12+
-			return 'By leaving this page, all changes will be lost.';
+			return; 
+			//'By leaving this page, all changes will be lost.';
 		};
 	};
 	

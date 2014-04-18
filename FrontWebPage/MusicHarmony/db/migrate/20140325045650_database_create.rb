@@ -42,6 +42,7 @@ class DatabaseCreate < ActiveRecord::Migration
     end
       create_table :replies do |t|
       t.integer :SOURCE_NUM
+      t.integer :COMMENT_NUM
       t.timestamps :UPLOAD_DATE
       t.integer :PRI_USER_ID
       t.text :CONTENTS

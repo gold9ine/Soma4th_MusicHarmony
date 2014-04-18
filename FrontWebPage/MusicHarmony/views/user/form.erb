@@ -1,43 +1,54 @@
 
 <body class="regist-background">
+	
+	<% if session[:login_fail] %>
+		<script>
+			alert("Password Error");
+		</script>
+		<% session[:login_fail] = nil %>
+	<% end %>
 
-		<form class="regist-height">
-			<div 
-			<div class="col-xs-12 col-sm-6 col-md-6 regist-padding">
+	<form class="regist-height" role="form">
+		<div class="center">
+			<form form class="form-horizontal" role="form" name="register-form">
+			<div class="col-xs-6 col-sm-6 col-md-6 regist-back">
 				<form class="form-horizontal" role="form" name="register-form">
 					<img src="/img/logo2.png" class="login-music-harmony"/>
 				</form>
 			</div>
 
-			<div class="col-xs-6 col-md-6 regist-padding">
-				<form class="form-horizontal" id="register-form" name="register-form" role="form" name="register-form" action="/regist" method="post">
+			<div class="col-xs-6 col-sm-6 regist-back">
+				
+				<form class="form-horizontal" onsubmit="return registcheck(this)" id="register-form" name="register-form" role="form" name="register-form" action="/regist" method="post">
+					
 					<div class="form-group regist-form-padding">
 						<h4 >Register</h4>
 					</div>
-					
-					<div class="form-group regist-form-padding">
-				    <label for="inputName" class="control-label">Name</label>
-				    <div class="regist-textbox">
-				      <input type="text" name="user[NAME]" class="register-form-control" id="inputName" placeholder="Name">
-				    </div>
-				  </div>
+				
 
 					<div class="form-group regist-form-padding">
 			    	<label for="inputEmail" class="control-label">Email</label>
-				    <input type="email" name="user[EMAIL]" class="register-form-control" id="inputEmail3" placeholder="Email">
+				    <input type="email" name="user[EMAIL]" class="register-form-control" id="email" placeholder="Email">
+				  </div>
+
+				  <div class="form-group regist-form-padding">
+				    <label for="inputName" class="control-label">Name</label>
+				    <div class="regist-textbox">
+				      <input type="text" name="user[NAME]" class="register-form-control" id="name" placeholder="Name">
+				    </div>
 				  </div>
 
 				  <div class="form-group regist-form-padding">
 				    <label for="inputPassword" class="control-label">Password</label>
 				    <div class="">
-				      <input type="password" name="user[PASSWORD]" class="register-form-control" id="inputPassword3" placeholder="Password">
+				      <input type="password" id="password" name="user[PASSWORD]" class="register-form-control" placeholder="Password">
 				    </div>
 				  </div>
 
 				  <div class="form-group regist-form-padding">
 				    <label for="inputPassword" class="control-label">Comfirm Password</label>
 				    <div class="">
-				      <input type="password" class="register-form-control" id="ComfirmPassword" placeholder="Comfirm Password">
+				      <input type="password" name="user[COMFIRM]" class="register-form-control" id="comfirm-password" placeholder="Comfirm Password">
 				    </div>
 				  </div>
 
@@ -62,6 +73,7 @@
 				  </div>
 
 			  </form>
-			</div>		
-		</form>
+			</div>
+		</div>
+	</form>
 </body>

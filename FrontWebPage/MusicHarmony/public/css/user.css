@@ -45,7 +45,9 @@
 
 .login-checkbox
 {
-	padding-right: 450px;
+	padding-bottom: 5px;
+	position:relative;left: -485px;
+
 }
 
 .login-label
@@ -118,8 +120,10 @@
 	height: 500px;
 }
 
-.regist-padding
+.regist-back
 {
+	background-color: white;
+	margin-top: 50px;
 	padding-left: 50px;
 	padding-right: 50px;
 }
