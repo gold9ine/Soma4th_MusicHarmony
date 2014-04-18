@@ -94,7 +94,7 @@
           <% @replies.each do |reply| %>
             <% if reply.COMMENT_NUM == comment.id %>
               <% if session[:user_id] == reply.PRI_USER_ID %>
-                <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_reply/<%= comment.id %>"> delete </a>
+                <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_reply/<%= comment.id %>/<%= reply.id %>"> delete </a>
               <% end %>
               <p><%= reply.CONTENTS %></p>
               

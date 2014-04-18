@@ -33,3 +33,10 @@ post '/new_reply/:project_id/:comment_id' do
   else
   end
 end
+
+get '/delete_reply/:comment_id/:reply_id' do
+  @reply = Reply.find(params[:reply_id])
+  @reply.destroy
+
+  redirect back
+end
