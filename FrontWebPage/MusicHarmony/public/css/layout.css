@@ -132,6 +132,10 @@ margin: 0 auto;
   height: auto;
   float: right;
 }
+.list-inline>li{
+  padding-left: 3px;
+  padding-right: 3px;
+}
 #search-box-form{
   clear: both;
 }
@@ -145,7 +149,7 @@ margin: 0 auto;
  /*width: 149px;*/
  /*width: 200px;*/
  width: 25%;
- height: 50px;
+ height: 45px;
  background-color: white;
  padding-top: 5px;
  padding-bottom: 5px;
