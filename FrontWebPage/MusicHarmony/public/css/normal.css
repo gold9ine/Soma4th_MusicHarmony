@@ -1,9 +1,22 @@
 .normal #topBanner{
 text-align: right;
 vertical-align: middle;
-height: 230px;
-width: 1920px;
+/*height: 230px;*/
+/*width: 1920px;*/
 background:  url('/img/background/topBannerImg_normalMode.png') no-repeat center;
 background-size: 100% 100%;
 margin: 0 auto;
+}
+
+.normal #project-list{
+  display: none;
+}
+
+.nomarl #myCarousel{
+  height: 100%;
+}
+.normal #myCarousel .caro_under {
+display: inline-flex;
+margin: 0 auto;
+width: 90%;
 }

@@ -1,24 +1,26 @@
-
 <% if logged_in? %>
-  <div id="topBanner-extention">
-    <div id="topBanner" class="normal">
+  <div id="topBanner-extention" class="topBanner-hight">
+
+<!--     <div id="topBanner-left" class="topBanner-hight topBanner-side-width">
+    </div> -->
+    <div id="topBanner" class="middleArea">
       <div class="middleArea">
         <div id="banner-user-search-area">
           <div id="banner-user-area" class="navbar-form pannel-heading">
             <ul class="list-unstyled list-inline">
               <li>
-                <a id="user-nickname" href="/user_info">
+                <a id="user-nickname" href="/my_info">
                   <h3 class="tilt"><%= session[:user_nick_name] %></h3>
-                </a>
-              </li>
-             <li>
-                <a href="/user_edit" TITLE="Edit">
-                  <img id="edit-button"></img>
                 </a>
               </li>
               <li>
                 <a href="/logout" value="delete" TITLE="Log out">
                   <img id="logout-button"></img>
+                </a>
+              </li>
+              <li>
+                <a href="/create-project" TITLE="Create Project">
+                  <img id="create-button"></img>
                 </a>
               </li>
               <li>
@@ -28,11 +30,14 @@
               </li>
             </ul>
           </div>
-          <form class="navbar-form clear" role="search">
-            <div class="form-group">
-              <input id="search-box" type="search" class="form-control" placeholder="Search" results="5" name="s" autosave="unique">
-            </div>
-            <button type="submit" id="search-button"class="btn btn-primary glyphicon glyphicon-ok"></button>
+
+          <form id="search-form" name="search-form" class="navbar-form clear" role="search" action="/search" method="post">
+            <fieldset>
+              <div class="form-group">
+                <input id="search-box" type="search" class="form-control" required="required" placeholder="Search" results="5" name="project[search]" autosave="unique">
+              </div>
+              <button type="submit" id="search-button"class="btn btn-primary glyphicon glyphicon-ok"></button>
+            </fieldset>
           </form>
 
         </div>
@@ -41,13 +46,19 @@
         </div>
       </div>
     </div>
+    <!-- <div id="topBanner-right" class="topBanner-hight topBanner-side-width">
+    </div> -->
+
+
   </div>
   <div id="topMenu" class="text-center menu-area-background">
-    <div class="btn-group middleArea">
-      <button onclick="location.href='/harmonyChart'" class="btn menu-btn menu-area-background btn-default" id="harmonyChartButton">Harmony Chart</button>
-      <button onclick="location.href='/artistRanking'" class="btn menu-btn menu-area-background btn-default" id="artistRankingButton">Artist Rank</button>
-      <button onclick="location.href='/my_project'" class="btn menu-btn btn menu-area-background btn-default" id="myProjectButton">My Project</button>
-      <button onclick="location.href='/timeline'" class="btn menu-btn menu-area-background btn-default" id="timelineButton">Timeline</button>
+    <div class="btn-group middleArea" style="
+    margin-left: 5px;
+">
+      <button onclick="location.href='/harmonyChart'" class="btn menu-btn menu-area-background btn-default" id="harmonyChartButton" name="harmonyChartButton"></button>
+      <button onclick="location.href='/artistRanking'" class="btn menu-btn menu-area-background btn-default" id="artistRankingButton" name="artistRankingButton"></button>
+      <button onclick="location.href='/my_project'" class="btn menu-btn btn menu-area-background btn-default" id="myProjectButton" name="myProjectButton"></button>
+      <button onclick="location.href='/timeline'" class="btn menu-btn menu-area-background btn-default" id="timelineButton" name="timelineButton"></button>
     </div>
   </div>
   <hr class="hr-underBar clear">

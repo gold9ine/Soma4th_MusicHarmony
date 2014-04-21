@@ -22,34 +22,54 @@
   <div class="carousel-inner">
     <div class="active item">
       <!-- <h2>Slide 1</h2> -->
-      <% for i in 1..2 %>
+      <!-- <#% for i in 1..2 %> -->
         <div class="row">
           <% for i in 1..6 %>
           <div class="col-xs-6 col-md-2">
             <a href="/project/<%= @imgId[@count] %>" class="thumbnail albumImg-a-thumbnail">
-              <img class="img-circle" src="<%= @imgSrc[@count] %>" alt="...">
+              <img class="img-circle morph" src="<%= @imgSrc[@count] %>" alt="...">
               <% @count=@count+1 %>
             </a>
           </div>
           <% end %>
         </div>
-      <% end %>
+        <div class="row caro_under">
+          <% for i in 1..6 %>
+          <div class="col-xs-6 col-md-2">
+            <a href="/project/<%= @imgId[@count] %>" class="thumbnail albumImg-a-thumbnail">
+              <img class="img-circle morph" src="<%= @imgSrc[@count] %>" alt="...">
+              <% @count=@count+1 %>
+            </a>
+          </div>
+          <% end %>
+        </div>
+      <!-- <=% end %> -->
     </div>
 
     <% for i in 1..2 %>
       <div class="item">
-        <% for i in 1..2 %>
+        <!-- <#% for i in 1..2 %> -->
           <div class="row">
             <% for i in 1..6 %>
             <div class="col-xs-6 col-md-2">
               <a href="/project/<%= @imgId[@count] %>" class="thumbnail albumImg-a-thumbnail">
-                <img class="img-circle" src="<%= @imgSrc[@count] %>" alt="...">
+                <img class="img-circle morph" src="<%= @imgSrc[@count] %>" alt="...">
                 <% @count=@count+1 %>
               </a>
             </div>
             <% end %>
           </div>
-        <% end %>
+          <div class="row caro_under">
+            <% for i in 1..6 %>
+            <div class="col-xs-6 col-md-2">
+              <a href="/project/<%= @imgId[@count] %>" class="thumbnail albumImg-a-thumbnail">
+                <img class="img-circle morph" src="<%= @imgSrc[@count] %>" alt="...">
+                <% @count=@count+1 %>
+              </a>
+            </div>
+            <% end %>
+          </div>
+        <!-- <#% end %> -->
       </div>
     <% end %>
   </div>
@@ -64,8 +84,6 @@
 <div class="center">
   <img class="under-bar-line"></img>
 </div>
-
-
 
 
  

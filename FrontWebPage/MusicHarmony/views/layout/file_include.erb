@@ -20,3 +20,36 @@
 <link rel="stylesheet" href="/css/normal.css">
 <link rel="stylesheet" href="/css/detail.css">
 <link rel="stylesheet" href="/css/user.css">
+
+<script>
+  var session_Mode = <%= session[:mode] %>;
+  console.log("현재세션 : " + session_Mode);
+  var session_Menu_hc = <%= session[:menu_hc] %>;
+  var session_Menu_ar = <%= session[:menu_ar] %>;
+  var session_Menu_mp = <%= session[:menu_mp] %>;
+  var session_Menu_tl = <%= session[:menu_tl] %>;
+
+  $(function(){ 
+    $("img#modeChangeButton").on('click', function(event){
+      event.preventDefault();
+
+      var containerArea = $('#container');
+      if(containerArea.hasClass('normal'))
+      { 
+        containerArea.removeClass('normal');
+        containerArea.addClass('detail');
+        
+        session_Mode = <%= session[:mode] = 1%>;
+        console.log("to detail 세션 : " + session_Mode);
+      }
+      else
+      {
+        containerArea.removeClass('detail');
+        containerArea.addClass('normal');
+        
+        session_Mode = <%= session[:mode] = 0%>;
+        console.log("to normal 세션 : " + session_Mode);
+      }
+    });
+  });
+</script>

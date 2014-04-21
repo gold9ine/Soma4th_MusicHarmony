@@ -1,6 +1,27 @@
-get '/userInfo' do
-  # erb :userInfo
-  erb 'project/userInfo'.to_sym
+get '/my_info' do
+  @user = User.find_by_id(session[:user_id])
+  @project = Project.find_all_by_PRI_USER_ID(session[:user_id])
+  @source = Source.find_all_by_PRI_USER_ID(session[:user_id])
+
+  session[:menu_hc] = 0
+  session[:menu_ar] = 0
+  session[:menu_mp] = 0
+  session[:menu_tl] = 0
+
+  erb 'user/my_info'.to_sym
+end
+
+get '/user_info/:id' do
+  @user = User.find_by_id(params[:id])
+  @project = Project.find_all_by_PRI_USER_ID(session[:user_id])
+  @source = Source.find_all_by_PRI_USER_ID(session[:user_id])
+
+  session[:menu_hc] = 0
+  session[:menu_ar] = 0
+  session[:menu_mp] = 0
+  session[:menu_tl] = 0
+
+  erb 'user/user_info'.to_sym
 end
 
 post '/regist' do
@@ -23,6 +44,7 @@ post '/regist' do
 
   if @user.save
     session[:user_id] = @user.id
+    session[:user_nick_name] = @user.NAME
     cookies[:user_id] = @user.id
     {:status => 'success', :redirect_to => '/'}.to_json
   else
@@ -42,6 +64,7 @@ post '/login' do
         cookies[:user_id] = @user.id
       end
       session[:user_id] = @user.id
+      session[:user_nick_name] = @user.NAME
       redirect "/"
     
     else
@@ -58,13 +81,16 @@ end
 
 get '/logout' do
   session[:user_id] = nil
+  session[:user_nick_name] = nil
   cookies[:user_id] = ""
 
   redirect '/user'
 end
 
 get '/user' do
+  session[:mode] = 0
   session[:user_id] = nil
+  session[:user_nick_name] = nil
   cookies[:user_id] = ""
 	erb 'user/form'.to_sym
 end

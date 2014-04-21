@@ -1,6 +1,6 @@
 # set path to app that will be used to configure unicorn,
 # note the trailing slash in this example
-@dir = "/home/mh/soma/webpage/html/MusicHarmony/"
+@dir = "/home/mh/soma/Projects/MusicHarmony/FrontWebPage/MusicHarmony/"
 
 worker_processes 2
 working_directory @dir
