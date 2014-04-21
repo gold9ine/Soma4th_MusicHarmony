@@ -3,10 +3,18 @@ get '/my_project' do
    @new_project = Project.new 
    @project = Project.find_all_by_PRI_USER_ID(session[:user_id])
    @source = Source.find_all_by_PRI_USER_ID(session[:user_id])
+  session[:menu_hc] = 0
+  session[:menu_ar] = 0
+  session[:menu_mp] = 1
+  session[:menu_tl] = 0
   erb 'project/my_project'.to_sym
 end
 
 get '/projectInfo' do
+  session[:menu_hc] = 0
+  session[:menu_ar] = 0
+  session[:menu_mp] = 1
+  session[:menu_tl] = 0
   erb 'project/projectInfo'.to_sym
 end
 
@@ -29,6 +37,10 @@ end
 get '/project/:id/edit' do
   @project = Project.find(params[:id])
   # erb :editProject
+  session[:menu_hc] = 0
+  session[:menu_ar] = 0
+  session[:menu_mp] = 1
+  session[:menu_tl] = 0
   erb 'project/editProject'.to_sym
 end
 
@@ -38,6 +50,18 @@ get '/project/:id' do
   @comments = Comment.includes(:replies).latest.find_all_by_project_id(@project.id)
   
   @replies = Reply.all
-
+  session[:menu_hc] = 0
+  session[:menu_ar] = 0
+  session[:menu_mp] = 1
+  session[:menu_tl] = 0
   erb 'project/projectInfo'.to_sym
+end
+
+get '/create-project' do
+  @new_project = Project.new 
+  session[:menu_hc] = 0
+  session[:menu_ar] = 0
+  session[:menu_mp] = 1
+  session[:menu_tl] = 0
+  erb 'project/create-project'.to_sym
 end

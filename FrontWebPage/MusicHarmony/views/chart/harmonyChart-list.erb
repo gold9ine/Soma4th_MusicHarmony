@@ -1,0 +1,18 @@
+<div id="project-list" class="row">
+  <!-- <legend>Project List</legend> -->
+  <div id="project-list" class="col-md-6">
+    <% @Project_Carousel.each do |project| %>
+    <div class="projects">
+      <h3><%= project.TITLE %></h3>
+      <a href="/project/<%= project.id %>">
+        <img class="projcet-img" src="<%= project.ALBUM_IMAGE_PATH_url %>"/>
+      </a>
+      <h5>Info : <%= project.PROJECT_INFO %></h5>
+    </div>
+    <div class="center">
+      <img class="under-bar-line under-bar-line-shot"></img>
+    </div>
+    <% end %>
+  </div>
+</div>
+

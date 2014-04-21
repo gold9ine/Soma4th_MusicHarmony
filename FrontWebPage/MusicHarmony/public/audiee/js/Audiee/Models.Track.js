@@ -20,7 +20,7 @@ define([
 		// default attributes
 		defaults: {
 			name: 'Untitled',
-			color: '#00a0b0',
+			color: '#aaa',
 			gain: 1,
 			pan: 0.5,
 			muted: false,

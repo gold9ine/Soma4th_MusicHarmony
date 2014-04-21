@@ -27,6 +27,7 @@ require './routes/edit.rb'
 require './routes/project.rb'
 require './routes/rank.rb'
 require './routes/source.rb'
+require './routes/search.rb'
 require './routes/timeline.rb'
 require './routes/user.rb'
 
@@ -35,6 +36,10 @@ require './routes/user.rb'
 get '/' do
   # erb :harmonyChart
   # session[:user_id]="1"
+    session[:menu_hc] = 0
+    session[:menu_ar] = 0
+    session[:menu_mp] = 0
+    session[:menu_tl] = 0
   if logged_in?
     @user = User.find_by_id(session[:user_id])
     # session[:user_nick_name] = @user.NAME
@@ -44,8 +49,19 @@ get '/' do
     # puts session[:user_nick_name].inspect
     # raise.Project_Carousel.inspect
     # session[:user_nick_name].to_yaml
+    session[:mode]
+    # raise session[:mode].inspect
+    session[:menu_hc] = 1
+    session[:menu_ar] = 0
+    session[:menu_mp] = 0
+    session[:menu_tl] = 0
     erb 'chart/harmonyChart'.to_sym
   else
+    # session[:mode] = 0
+    session[:menu_hc] = 0
+    session[:menu_ar] = 0
+    session[:menu_mp] = 0
+    session[:menu_tl] = 0
     redirect '/user'
   end
 end

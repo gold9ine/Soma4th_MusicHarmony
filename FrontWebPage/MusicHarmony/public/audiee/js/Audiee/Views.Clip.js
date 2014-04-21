@@ -62,6 +62,7 @@ define([
                 start: this.startMoving,
                 drag: this.scrollChange,
                 stop: this.updatePosition,
+                grid: [20],
                 // scroll?
             }).css('position', 'absolute');
         },

@@ -6,19 +6,19 @@
 // ----------
 
 // Webkit
-@-webkit-keyframes progress-bar-stripes {
+@-webkit-keyframes progress-bar-stripes-less {
   from  { background-position: 0 0; }
   to    { background-position: 40px 0; }
 }
 
 // Firefox
-@-moz-keyframes progress-bar-stripes {
+@-moz-keyframes progress-bar-stripes-less {
   from  { background-position: 0 0; }
   to    { background-position: 40px 0; }
 }
 
 // Spec
-@keyframes progress-bar-stripes {
+@keyframes progress-bar-stripes-less {
   from  { background-position: 0 0; }
   to    { background-position: 40px 0; }
 }
@@ -29,7 +29,7 @@
 // --------
 
 // Outer container
-.progress {
+.progress-less {
   overflow: hidden;
   height: 18px;
   margin-bottom: 18px;
@@ -39,7 +39,7 @@
 }
 
 // Bar of progress
-.progress .bar {
+.progress-less .bar {
   width: 0%;
   height: 18px;
   color: @white;
@@ -59,7 +59,7 @@
 }
 
 // Call animation for the active one
-.progress.active .bar {
+.progress-less.active .bar {
   -webkit-animation: progress-bar-stripes 2s linear infinite;
      -moz-animation: progress-bar-stripes 2s linear infinite;
           animation: progress-bar-stripes 2s linear infinite;
