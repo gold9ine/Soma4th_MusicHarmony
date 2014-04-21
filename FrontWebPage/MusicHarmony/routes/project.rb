@@ -57,5 +57,10 @@ get '/project/:id' do
 end
 
 get '/create-project' do
+  @new_project = Project.new 
+  session[:menu_hc] = 0
+  session[:menu_ar] = 0
+  session[:menu_mp] = 1
+  session[:menu_tl] = 0
   erb 'project/create-project'.to_sym
 end

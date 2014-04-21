@@ -1,5 +1,28 @@
-get '/user_info' do
-  # erb :userInfo
+get '/my_info' do
+  @user = User.find_by_id(session[:user_id])
+  # @user = User.find_by_id(params[:id])
+  @project = Project.find_all_by_PRI_USER_ID(session[:user_id])
+  @source = Source.find_all_by_PRI_USER_ID(session[:user_id])
+
+  session[:menu_hc] = 0
+  session[:menu_ar] = 0
+  session[:menu_mp] = 0
+  session[:menu_tl] = 0
+
+  erb 'user/my_info'.to_sym
+end
+
+get '/user_info/:id' do
+  # @user = User.find_by_id(session[:user_id])
+  @user = User.find_by_id(params[:id])
+  @project = Project.find_all_by_PRI_USER_ID(session[:user_id])
+  @source = Source.find_all_by_PRI_USER_ID(session[:user_id])
+
+  session[:menu_hc] = 0
+  session[:menu_ar] = 0
+  session[:menu_mp] = 0
+  session[:menu_tl] = 0
+
   erb 'user/user_info'.to_sym
 end
 
