@@ -1,18 +1,26 @@
 
 function registcheck(formEI)
 {
-	if(formEI.password.value != formEI.comfirm-password.value);
-	{
-		alert("Password Error");
-	}
 	
-	if (formEI.email.value == "")
+	
+	if (formEI.email.value.length == 0)
 	{
 		alert("Email Error");
+		return false;
 	}
 	
-	if(formEI.name.value == "")
+	if(formEI.name.value.length == 0)
 	{
 		alert("Name Error");
+		return false;
+	}
+
+	var pw = formEI.password.value
+	var pwagain = formEI.passwordagain.value
+	if( pw != pwagain)
+	{
+		alert("Password Error");
+		return false;
 	}
 }
+

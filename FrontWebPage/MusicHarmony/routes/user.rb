@@ -16,17 +16,16 @@ post '/regist' do
   # cookies[:user_id] = @user.id
   # redirect '/'
 
-  unless params[:user][:COMFIRM] == params[:user][:PASSWORD]
-    form = erb('user/form'.to_sym, :layout => false)
-    {:status => 'failure', :form => form}.to_json
-  end
+  # puts params[:user][:COMFIRM].inspect != params[:user][:PASSWORD].inspect
+  # if params[:user][:COMFIRM] != params[:user][:PASSWORD]
+  #   form = erb('user/form'.to_sym, :layout => false)
+  #   {:status => 'failure', :form => form}.to_json
+  # end
 
   if @user.save
     session[:user_id] = @user.id
-    cookies[:user_id] = @user.id
     {:status => 'success', :redirect_to => '/'}.to_json
   else
-    raise @user.error        
     form = erb('user/form'.to_sym, :layout => false)
     {:status => 'failure', :form => form}.to_json
   end
