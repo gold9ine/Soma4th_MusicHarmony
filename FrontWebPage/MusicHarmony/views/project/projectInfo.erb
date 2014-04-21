@@ -91,7 +91,7 @@
 
         <ul class="reply list-group-item">
           <% @replies.each do |reply| %>
-            <% if reply.COMMENT_NUM == comment.id %>
+            <% if reply.comment_id == comment.id %>
               <% if session[:user_id] == reply.PRI_USER_ID %>
                 <a class="btn btn-danger btn-xs pull-right" role="button" href="/delete_reply/<%= comment.id %>/<%= reply.id %>"> delete </a>
               <% end %>

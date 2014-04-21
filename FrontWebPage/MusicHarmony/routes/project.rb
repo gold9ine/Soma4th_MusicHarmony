@@ -33,9 +33,10 @@ get '/project/:id/edit' do
 end
 
 get '/project/:id' do
-  @project = Project.find(params[:id])
+  @project = Project.includes(:comments).find(params[:id])
   @sources = Source.find_all_by_PROJECT_NUM(@project.id)
-  @comments = Comment.find_all_by_PROJECT_NUM(@project.id)
+  @comments = Comment.includes(:replies).latest.find_all_by_project_id(@project.id)
+  
   @replies = Reply.all
 
   erb 'project/projectInfo'.to_sym

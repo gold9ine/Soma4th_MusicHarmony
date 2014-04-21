@@ -42,13 +42,13 @@ class DatabaseCreate < ActiveRecord::Migration
     end
       create_table :replies do |t|
       t.integer :SOURCE_NUM
-      t.integer :COMMENT_NUM
+      t.integer :comment_id
       t.timestamps :UPLOAD_DATE
       t.integer :PRI_USER_ID
       t.text :CONTENTS
     end
       create_table :comments do |t|
-      t.integer :PROJECT_NUM
+      t.integer :project_id
       t.timestamps :UPLOAD_DATE
       t.integer :PRI_USER_ID
       t.text :CONTENTS

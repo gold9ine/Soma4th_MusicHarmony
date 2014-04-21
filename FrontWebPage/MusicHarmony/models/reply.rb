@@ -3,6 +3,7 @@ class Reply < ActiveRecord::Base
 
   belongs_to :users, :counter_cache => true
   belongs_to :sources, :counter_cache => true
+  belongs_to :comments, :counter_cache => true
 
   validates :CONTENTS, :presence => true
 

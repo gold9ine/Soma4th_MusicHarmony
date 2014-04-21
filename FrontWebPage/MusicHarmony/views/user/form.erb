@@ -8,7 +8,7 @@
 		<% session[:login_fail] = nil %>
 	<% end %>
 
-	<form class="regist-height" role="form">
+	<div class="bs-example" role="form">
 		<div class="center">
 			<form form class="form-horizontal" role="form" name="register-form">
 			<div class="col-xs-6 col-sm-6 col-md-6 regist-back">
@@ -17,7 +17,7 @@
 				</form>
 			</div>
 
-			<div class="col-xs-6 col-sm-6 regist-back">
+			<div class="col-xs-6 col-sm-6 col-md-6 regist-back">
 				
 				<form class="form-horizontal" onsubmit="return registcheck(this)" id="register-form" name="register-form" role="form" name="register-form" action="/regist" method="post">
 					
@@ -75,5 +75,5 @@
 			  </form>
 			</div>
 		</div>
-	</form>
+	</div>
 </body>

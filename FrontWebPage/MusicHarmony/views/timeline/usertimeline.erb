@@ -3,12 +3,13 @@
     <legend>Comment & TimeLine</legend>
     
     <div id="project-comments">
+
       <% @comments.each do |comment| %>
         <div class="panel panel-default">
           <div class="panel-heading">            
             <div>
               <p class=""> <%= comment.created_at.inspect.slice!(0 .. 9) %></p>
-              <p> project : <%= Project.find(comment.PROJECT_NUM).TITLE %> </p>
+              <p> project : <%= Project.find(comment.project_id).TITLE %> </p>
             </div>
     
             <div class="">

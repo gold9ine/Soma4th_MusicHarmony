@@ -2,7 +2,7 @@ post '/new_comment/:id' do
   @project = Project.find(params[:id])
   @comment = Comment.new
   @comment.CONTENTS = params[:comment][:CONTENTS]
-  @comment.PROJECT_NUM = params[:id]
+  @comment.project_id = params[:id]
   @comment.PRI_USER_ID = session[:user_id]
   @comment.save!
 
@@ -24,7 +24,7 @@ end
 
 post '/new_reply/:project_id/:comment_id' do
   @reply = Reply.new
-  @reply.COMMENT_NUM = params[:comment_id]
+  @reply.comment_id = params[:comment_id]
   @reply.PRI_USER_ID = session[:user_id]
   @reply.CONTENTS = params[:reply][:CONTENTS]
   
