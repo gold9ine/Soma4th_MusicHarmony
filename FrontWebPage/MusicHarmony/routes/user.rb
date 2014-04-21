@@ -1,6 +1,5 @@
 get '/my_info' do
   @user = User.find_by_id(session[:user_id])
-  # @user = User.find_by_id(params[:id])
   @project = Project.find_all_by_PRI_USER_ID(session[:user_id])
   @source = Source.find_all_by_PRI_USER_ID(session[:user_id])
 
@@ -13,7 +12,6 @@ get '/my_info' do
 end
 
 get '/user_info/:id' do
-  # @user = User.find_by_id(session[:user_id])
   @user = User.find_by_id(params[:id])
   @project = Project.find_all_by_PRI_USER_ID(session[:user_id])
   @source = Source.find_all_by_PRI_USER_ID(session[:user_id])
