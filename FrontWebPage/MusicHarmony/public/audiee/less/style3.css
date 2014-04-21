@@ -31,7 +31,7 @@ body {
 
 // variables
 @trackHeight:     120px;
-@infoWidth:       @trackHeight;
+@infoWidth:       200px;
 @infoHeight:      @trackHeight;
 @timelineHeight:  70px;
 @menubarHeight:   3em;
@@ -181,7 +181,7 @@ body {
 
       .volume {
         width: 100px;
-        margin: 5px;
+        margin: 10px;
       }
 
       .btn {
@@ -194,7 +194,7 @@ body {
       height: @trackHeight;
       margin-left: @infoWidth;
       position: relative;      
-      background-color: #e5e5e5;
+      background-color: #eee;
 
       .display-wrapper {
         height: @trackHeight - 20;
@@ -274,7 +274,7 @@ body {
         }
 
         .clip-display {
-          height: 100px;
+          height: 120px;
           border-left: 1px solid @grayLight;
           border-right: 1px solid @grayLight;
 

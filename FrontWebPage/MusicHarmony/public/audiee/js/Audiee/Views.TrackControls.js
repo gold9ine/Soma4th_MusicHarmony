@@ -26,9 +26,9 @@ define([
         className: 'track-controls',
 
         template: _.template(
-            '<button class="btn mute {{ muted }}" data-toggle="button" title="mute">M</button>' +
-            '<button class="btn solo {{ solo }}" data-toggle="button" title="solo">S</button>' +
-            '<input type="range" class="volume" value="{{ gain }}" title="volume">'
+            '<div><button class="btn mute {{ muted }}" data-toggle="button" title="mute">Mute</button>' +
+            '<button class="btn solo {{ solo }}" data-toggle="button" title="solo">Solo</button></div>' +
+            '<div>Volume<input type="range" class="volume right" value="{{ gain }}" title="volume"></div>'
         ),
 
         initialize: function() {

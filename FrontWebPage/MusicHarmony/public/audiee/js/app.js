@@ -40,6 +40,8 @@ define(function(require) {
 	// plugins without reference
 		require('plugins/modal');
 
+	//jQuery("link[rel=stylesheet][href*='/css/bootstrap.min.css']").remove();
+	//jQuery("link[rel=stylesheet][href*='/css/bootstrap-theme.min.css']").remove();
 
 	// Audiee global object
 	var Audiee = {
