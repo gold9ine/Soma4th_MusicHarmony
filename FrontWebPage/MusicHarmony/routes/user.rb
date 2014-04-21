@@ -1,6 +1,6 @@
-get '/userInfo' do
+get '/user_info' do
   # erb :userInfo
-  erb 'project/userInfo'.to_sym
+  erb 'user/user_info'.to_sym
 end
 
 post '/regist' do
@@ -67,6 +67,7 @@ get '/logout' do
 end
 
 get '/user' do
+  session[:mode] = 0
   session[:user_id] = nil
   session[:user_nick_name] = nil
   cookies[:user_id] = ""

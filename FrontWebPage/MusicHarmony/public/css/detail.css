@@ -1,9 +1,26 @@
 .detail #topBanner{
 text-align: right;
 vertical-align: middle;
-height: 230px;
-width: 1920px;
+/*height: 230px;*/
+/*width: 1920px;*/
 background:  url('/img/background/topBannerImg_detailMode.png') no-repeat center;
 background-size: 100% 100%;
 margin: 0 auto;
+}
+
+.detail #project-list{
+  display: table;
+}
+
+/*carousel    여기부터 카로셀 //////////////////////////////////////*/
+
+
+.detail #myCarousel{
+  height: 260px;
+}
+
+.detail #myCarousel .caro_under {
+display: none;
+margin: 0 auto;
+width: 90%;
 }
